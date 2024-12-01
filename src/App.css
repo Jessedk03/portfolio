@@ -1,0 +1,7 @@
+html, body {
+    overflow-x: hidden !important;
+}
+.desktop-navbar {
+    height: 100vh;
+    box-shadow: 3px 0 20px 1px #eaeaea;
+}
