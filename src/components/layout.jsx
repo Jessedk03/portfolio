@@ -1,8 +1,8 @@
-import { Navbar } from './Navbar';
-import { Col, Row } from 'react-bootstrap';
-import { useMediaQuery } from '@mantine/hooks';
+import {Navbar} from './Navbar';
+import {Col, Row} from 'react-bootstrap';
+import {useMediaQuery} from '@mantine/hooks';
 
-export function Layout({ children }) {
+export function Layout({children}) {
     const isMobile = useMediaQuery('(max-width: 767px)');
 
     return (
@@ -12,7 +12,7 @@ export function Layout({ children }) {
                     {/* Mobile Layout: Navbar on top */}
                     <Row className="g-0">
                         <Col className="mobile-navbar">
-                            <Navbar />
+                            <Navbar/>
                         </Col>
                     </Row>
                     {/* Main Content Below */}
@@ -21,27 +21,27 @@ export function Layout({ children }) {
                     </Row>
                 </>
             ) : (
-                <Row className="g-0" style={{ height: "100vh" }}>
+                <Row className="g-0" style={{height: "100vh"}}>
                     {/* Desktop Layout */}
-                    <Col
-                        md={2}
+                    <div
                         className="desktop-navbar border-end"
                         style={{
+                            width: "15%",
                             height: "100%",
                         }}
                     >
-                        <Navbar />
-                    </Col>
-                    <Col
-                        md={10}
+                        <Navbar/>
+                    </div>
+                    <div
                         className="desktop-content"
                         style={{
+                            width: "85%",
                             height: "100%",
                             overflowY: "auto",
                         }}
                     >
                         {children}
-                    </Col>
+                    </div>
                 </Row>
             )}
         </div>
