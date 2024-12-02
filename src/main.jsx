@@ -17,7 +17,7 @@ const theme = createTheme({
 });
 
 createRoot(document.getElementById('root')).render(
-    <MantineProvider defaultColorScheme="auto" theme={theme}>
+    <MantineProvider defaultColorScheme="light" theme={theme}>
         <StrictMode>
             <BrowserRouter>
                 <App/>
