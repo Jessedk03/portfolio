@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client'
 import {App} from './App.jsx'
 import {createTheme, MantineProvider} from "@mantine/core";
 import {BrowserRouter} from "react-router-dom";
+import '@mantine/core/styles.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import {Navbar} from "./components/navbar.jsx";
 
 const theme = createTheme({
     breakpoints: {

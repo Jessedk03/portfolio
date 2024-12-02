@@ -1,5 +1,4 @@
 import { Navbar } from './Navbar';
-import { Container } from '@mantine/core';
 import { Col, Row } from 'react-bootstrap';
 import { useMediaQuery } from '@mantine/hooks';
 
@@ -7,7 +6,7 @@ export function Layout({ children }) {
     const isMobile = useMediaQuery('(max-width: 767px)');
 
     return (
-        <Container fluid className="app-layout">
+        <div className="app-layout">
             {isMobile ? (
                 <>
                     {/* Mobile Layout: Navbar on top */}
@@ -22,16 +21,29 @@ export function Layout({ children }) {
                     </Row>
                 </>
             ) : (
-                <Row className="g-0">
+                <Row className="g-0" style={{ height: "100vh" }}>
                     {/* Desktop Layout */}
-                    <Col md={1} className="desktop-navbar border-end">
+                    <Col
+                        md={2}
+                        className="desktop-navbar border-end"
+                        style={{
+                            height: "100%",
+                        }}
+                    >
                         <Navbar />
                     </Col>
-                    <Col md={11} className="desktop-content">
+                    <Col
+                        md={10}
+                        className="desktop-content"
+                        style={{
+                            height: "100%",
+                            overflowY: "auto",
+                        }}
+                    >
                         {children}
                     </Col>
                 </Row>
             )}
-        </Container>
+        </div>
     );
 }
