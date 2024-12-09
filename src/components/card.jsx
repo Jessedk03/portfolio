@@ -50,9 +50,17 @@ export function CardProjects() {
                                 <Image src={card.imageRoute} height={160} alt="project image"/>
                             </Card.Section>
 
-                            <Group justify="space-between" mt="md" mb="xs">
-                                <Text fw={500}>{card.title}</Text>
-                                <Badge color={card.themeColor} variant={"filled"}>{card.function}</Badge>
+                            <Group className={"justify-content-center w-100"} mt={"xs"} mb={"xs"}>
+                                <Row className={"w-100"}>
+                                    <Col xs={12} sm={12} md={12} lg={12}>
+                                        <Text fw={500}>{card.title}</Text>
+                                    </Col>
+                                </Row>
+                                <Row className={"w-100"}>
+                                    <Col xs={12} sm={12} md={12} lg={12}>
+                                        <Badge color={card.themeColor} variant={"filled"}>{card.function}</Badge>
+                                    </Col>
+                                </Row>
                             </Group>
 
                             <Text size="sm" c="dimmed">
