@@ -50,7 +50,7 @@ export function LandingPage() {
             <Container>
                 <Row className="align-items-center pt-3">
                     <h2 className={`${isMobile ? 'px-3 text-center w-100' : 'ps-5'}`}>Projects</h2>
-                    <Col xs={12} md={4} className="text-center">
+                    <Col xs={12} md={4} className="text-center w-100">
                         <CardProjects/>
                     </Col>
                 </Row>
