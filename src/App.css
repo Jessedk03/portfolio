@@ -5,3 +5,15 @@ html, body {
     height: 100vh;
     box-shadow: 3px 0 20px 1px #eaeaea;
 }
+
+html, body {
+    height: 100%;
+}
+
+.relative-parent {
+    position: relative;
+}
+
+.prevent-overflow {
+    overflow: visible;
+}

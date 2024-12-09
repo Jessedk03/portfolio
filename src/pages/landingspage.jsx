@@ -27,12 +27,12 @@ export function LandingPage() {
                          className={`text-center text-md-start mb-3 mb-md-0 ${isMobile ? 'px-3' : 'ps-5'}`}>
                         <p className={"m-0"}>Hi! Welcome to my website my name is </p>
                         <h1>Jesse de Koe</h1>
-                        <p>I am {getAge('2003-05-14')} years old, living in Overijssel, Netherlands <Image
-                            src={"src/assets/img/flag-nl.png"} style={{width: 20, height: 20}} className={"mb-1"}/>
+                        <p>I am {getAge('2003-05-14')} years old, living in Overijssel, Netherlands.
+                            If you want to know more about me navigate through the website!
                         </p>
                     </Col>
 
-                    <Col xs={12} md={4} className="align-items-center d-flex">
+                    <Col xs={12} md={4} className="d-flex justify-content-center align-items-center">
                         <Image
                             src={"./src/assets/img/memoji.png"}
                             alt={"memoji"}
@@ -49,7 +49,7 @@ export function LandingPage() {
             </Container>
             <Container>
                 <Row className="align-items-center pt-3">
-                    <h2 className={`${isMobile ? 'px-3 text-center w-100' : 'ps-5'}`}>Projecten</h2>
+                    <h2 className={`${isMobile ? 'px-3 text-center w-100' : 'ps-5'}`}>Projects</h2>
                     <Col xs={12} md={4} className="text-center">
                         <CardProjects/>
                     </Col>
