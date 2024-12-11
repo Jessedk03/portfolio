@@ -1,30 +1,27 @@
 import {useState} from "react";
-import {Badge, Button, Card, Group, Image, Modal, Text, Title} from "@mantine/core";
+import {Badge, Button, Card, Container, Group, Image, Modal, Text, Title} from "@mantine/core";
 import {Col, Row} from "react-bootstrap";
 
 const cardData = [
     {
-        imageRoute: "src/assets/img/invoice.jpg",
+        imageRoute: "src/assets/img/invoice.webp",
         function: "internship",
-        title: "Invoice module",
+        title: "Invoice Module",
         slug: "Created an invoice management module during my internship.",
-        fullDescription: "",
         themeColor: "teal"
     },
     {
-        imageRoute: "src/assets/img/hrm.jpg",
+        imageRoute: "src/assets/img/hrm.webp",
         function: "internship",
         title: "HRM System",
         slug: "Tracked employee free hours and optimized HR processes.",
-        fullDescription: "",
         themeColor: "indigo"
     },
     {
-        imageRoute: "src/assets/img/insights.jpg",
+        imageRoute: "src/assets/img/insights.webp",
         function: "internship",
         title: "Insights Dashboard",
         slug: "Created an analytics module using C# and .NET.",
-        fullDescription: "",
         themeColor: "cyan"
     },
     {
@@ -32,8 +29,14 @@ const cardData = [
         function: "work",
         title: "Customer Portal",
         slug: "Developed a portal for customer self-service.",
-        fullDescription: "",
         themeColor: "violet"
+    },
+    {
+        imageRoute: "src/assets/img/portfolio-card.webp",
+        function: "personal",
+        title: "Portfolio Website",
+        slug: "Developed a portfolio website in React!",
+        themeColor: "red"
     }
 ];
 
@@ -44,10 +47,10 @@ export function CardProjects() {
         <>
             <Row className={"g-4 justify-content-center"}>
                 {cardData.map((card) => (
-                    <Col key={card.title} xs={12} md={6} lg={4} className={"justify-content-start"}>
-                        <Card key={card.title} shadow="lg" padding="lg" className={"m-2"} radius="md" withBorder>
+                    <Col key={card.title} xs={12} sm={6} md={6} lg={4} style={{maxHeight: '355px'}} className={"justify-content-start"}>
+                        <Card key={card.title} shadow="lg" padding="lg" style={{height: '100%'}} className={"m-2"} radius="md" withBorder>
                             <Card.Section>
-                                <Image src={card.imageRoute} height={160} alt="project image"/>
+                                <Image src={card.imageRoute} height={160} style={{width: '100%'}} alt="project image"/>
                             </Card.Section>
 
                             <Group className={"justify-content-center w-100"} mt={"xs"} mb={"xs"}>
@@ -57,7 +60,7 @@ export function CardProjects() {
                                     </Col>
                                 </Row>
                                 <Row className={"w-100"}>
-                                    <Col xs={12} sm={12} md={12} lg={12}>
+                                    <Col className={"justify-content-center d-flex"} xs={12} sm={12} md={12} lg={12}>
                                         <Badge color={card.themeColor} variant={"filled"}>{card.function}</Badge>
                                     </Col>
                                 </Row>
@@ -89,11 +92,156 @@ export function CardProjects() {
                     size="xl"
                     title={openedCard.title}
                 >
-                    <Image src={openedCard.imageRoute} height={140} alt="project image"/>
-                    <Title>{openedCard.title}</Title>
-                    <Text>{openedCard.fullDescription || "No description available."}</Text>
+                    <Image src={openedCard.imageRoute} style={{width: '100%', height: '180px'}} radius={"md"} alt="project image"/>
+                    <Container className={"py-2 border-bottom"}>
+                        <Title>{openedCard.title}</Title>
+                    </Container>
+                    <Text>{getCardDescription(openedCard.title)}</Text>
                 </Modal>
             )}
         </>
     );
+
+    function getCardDescription(title) {
+        switch (title) {
+            case "Invoice Module":
+                return (
+                    <Container>
+                        <Text size="lg">
+                            This was my first interaction with the software development field. The project was
+                            challenging
+                            because it was the first time I programmed something different from what I was used to
+                            in
+                            school. The back-end was built with Laravel 8.x, PHP 8.1, SQL, and XML, while the
+                            front-end was
+                            developed using Laravel Blade, Bootstrap, JQuery, and HTML/CSS.
+                        </Text>
+                        <Text size="lg" className="my-4">
+                            I created an invoice module for a large CRM platform, allowing customers to view their
+                            invoices and invoice lines,
+                            with the added functionality to download them as PDF files. The internship lasted for
+                            five months, and I had a
+                            great time working with the team.
+                        </Text>
+                        <Text size="lg">
+                            This experience made me realize that working for a small company is more about social
+                            interaction and collaboration
+                            than solely focusing on performance. Of course, it’s still important to avoid
+                            underperforming.
+                        </Text>
+                    </Container>
+                );
+            case "HRM System":
+                return (
+                    <Container>
+                        <Text size="lg">
+                            The year after my first internship, I returned to the same company, this time with a bit
+                            more
+                            experience. This time, I built an HRM system for the HR department where employees could
+                            request
+                            their days off or vacations. The system generated a PDF showing a list of their hours:
+                            hours before
+                            - hours requested - hours remaining. Each year, it automatically reset the hours back to
+                            200-something hours.
+                        </Text>
+                        <Text size="lg" className="my-4">
+                            This was a simple widget added to the CRM dashboard. This project was also my first
+                            experience working with roles
+                            and permissions, which was a challenge for me.
+                        </Text>
+                        <Text size="lg">
+                            The back-end was built with Laravel 8.x,
+                            PHP 8.2, SQL, and XML,
+                            while the front-end was developed using Laravel Blade, Bootstrap, JQuery, and HTML/CSS.
+                        </Text>
+                    </Container>
+                );
+            case "Insights Dashboard":
+                return (
+                    <Container>
+                        <Text size="lg">
+                            During my third and final internship, which was my graduation internship, a classmate
+                            and I built an
+                            insights dashboard module. This module allowed customers to view analytics on their cash
+                            register
+                            transactions, orders, invoices, quotes, purchase orders, and warehouse stock. It
+                            displayed all this
+                            information in clear graphs and tables.
+                        </Text>
+                        <Text size="lg" className="my-4">
+                            The purpose of this module was to create an additional layer on top of the analytics
+                            page for the company I interned with,
+                            so we could access identical statistics for each company and better understand how each
+                            was performing.
+                        </Text>
+                        <Text size="lg">
+                            The back-end was developed using C#, .NET, and T-SQL, while the front-end was built with
+                            Vue.js, Bootstrap, and HTML/CSS.
+                        </Text>
+                    </Container>
+                );
+            case "Customer Portal":
+                return (
+                    <Container>
+                        <Text size="lg">
+                            After finishing school, I got a job at the company where I completed my last internship.
+                            Shortly
+                            after, I worked on the Insights Dashboard module before being assigned a new project —
+                            the Customer
+                            Portal. The in-house Project Management System (PMS) was built with PHP 7.3, so I
+                            suggested using
+                            Laravel 11.x and PHP 8.3 for the new project. They agreed, and together we created the
+                            Customer Portal.
+                        </Text>
+                        <Text size="lg" className="mt-4">
+                            This was familiar territory for me, as we were taught Laravel in school, and both of my
+                            previous internships
+                            involved working with Laravel. It felt like reconnecting with an old friend — catching
+                            up on what's new,
+                            but still familiar.
+                        </Text>
+                        <Text size="lg" className="mt-4">
+                            This was also my first time taking on a larger share of the work, as I had more
+                            experience with the language/framework
+                            being used. While the other developer focused on addressing ongoing maintenance issues
+                            with the PMS, I handled
+                            much of the development for the Customer Portal. It was an exciting and enjoyable
+                            experience for me.
+                        </Text>
+                        <Text size="lg" className="mt-4">
+                            The back-end was built with PHP 8.3, Laravel 11.x, and SQL, while the front-end was
+                            developed using Bootstrap and HTML/CSS.
+                        </Text>
+                    </Container>
+                );
+            case "Portfolio Website":
+                return (
+                    <Container>
+                        <Text size="lg">
+                            For a long time, I wanted to create something in React to gain a better understanding of
+                            front-end
+                            applications. So, I decided to create a portfolio website while learning React. As part
+                            of the learning
+                            process, I also wanted to understand how to deploy and host a website. I am familiar
+                            with GitHub Pages
+                            and have used it for several unfinished projects, but I wanted my own custom domain to
+                            make it more personal.
+                        </Text>
+                        <Text size="lg" className="mt-4">
+                            This project is built using React, Mantine, Bootstrap, and HTML/CSS, and is hosted by
+                            Strato.
+                        </Text>
+                    </Container>
+                );
+            default:
+                return (
+                    <Container>
+                        <Card shadow="sm" padding="lg" radius="md" withBorder>
+                            <Title order={2} className="text-center mb-4">No available description.</Title>
+                        </Card>
+                    </Container>
+
+                );
+        }
+    }
 }

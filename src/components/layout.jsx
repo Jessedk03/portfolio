@@ -21,7 +21,7 @@ export function Layout({children}) {
                     </Row>
                 </>
             ) : (
-                <Row className="g-0" style={{height: "100vh"}}>
+                <Row className={"g-0"} style={{height: "100vh"}}>
                     {/* Desktop Layout */}
                     <div
                         className="desktop-navbar border-end"

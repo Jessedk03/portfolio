@@ -34,7 +34,7 @@ export function LandingPage() {
 
                     <Col xs={12} md={4} className="d-flex justify-content-center align-items-center">
                         <Image
-                            src={"./src/assets/img/memoji.png"}
+                            src={"./src/assets/img/memoji.webp"}
                             alt={"memoji"}
                             style={{
                                 width: 200,
@@ -47,7 +47,7 @@ export function LandingPage() {
                     </Col>
                 </Row>
             </Container>
-            <Container>
+            <Container className={"mb-5"}>
                 <Row className="align-items-center pt-3">
                     <h2 className={`${isMobile ? 'px-3 text-center w-100' : 'ps-5'}`}>Projects</h2>
                     <Col xs={12} md={4} className="text-center w-100">
