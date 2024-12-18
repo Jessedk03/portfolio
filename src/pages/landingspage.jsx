@@ -50,7 +50,8 @@ export function LandingPage() {
             </Container>
             <Container className={"mb-5"}>
                 <Row className="align-items-center pt-3">
-                    <h2 className={`${isMobile ? 'px-3 text-center w-100' : 'ps-5'}`}>Projects</h2>
+                    <h2 className={`mb-0 ${isMobile ? 'px-3 text-center w-100' : 'ps-5'}`}>Projects</h2>
+                    <small className={`text-muted fst-italic mb-1 ${isMobile ? 'px-3 text-center w-100' : 'ps-5'}`}>New to Old</small>
                     <Col xs={12} md={4} className="text-center w-100">
                         <CardProjects/>
                     </Col>
