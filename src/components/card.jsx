@@ -53,7 +53,7 @@ export function CardProjects() {
     return (
         <>
             <Row className={"g-4 justify-content-center"}>
-                {cardData.map((card) => (
+                {cardData.toReversed().map((card) => (
                     <Col key={card.title} xs={12} sm={6} md={6} lg={4} style={{maxHeight: '355px'}}
                          className={"justify-content-start"}>
                         <Card key={card.title} shadow="lg" padding="lg" style={{height: '100%'}} className={"m-2"}
