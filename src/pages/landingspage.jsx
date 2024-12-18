@@ -3,7 +3,8 @@ import {Col, Row} from "react-bootstrap";
 import {useMediaQuery} from "@mantine/hooks";
 import {CardProjects} from "../components/card.jsx";
 
-function getAge(birthdayDate) {
+// eslint-disable-next-line react-refresh/only-export-components
+export function getAge(birthdayDate) {
     const birthday = new Date(birthdayDate);
     const today = new Date();
 
