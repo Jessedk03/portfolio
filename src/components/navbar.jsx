@@ -101,7 +101,7 @@ export function Navbar() {
                             <Group direction="column" className={"py-2 border-bottom text-center d-flex"}>
                                 <Row className="w-100">
                                     <Col xs={6} md={6} lg={6} className="d-flex align-items-center">
-                                        <p className={"m-0"}>Portfolio</p>
+                                        <p className={"m-0 ms-2"}>Portfolio</p>
                                     </Col>
                                     <Col xs={6} md={6} lg={6} className="d-flex align-items-center flex-row-reverse">
                                         <LanguageGlobe color="#707070"/>
