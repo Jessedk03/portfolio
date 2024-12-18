@@ -37,6 +37,13 @@ const cardData = [
         title: "Portfolio Website",
         slug: "Developed a portfolio website in React!",
         themeColor: "red"
+    },
+    {
+        imageRoute: "src/assets/img/java-logo-card.webp",
+        function: "personal",
+        title: "Java REST API",
+        slug: "Building a REST API with Spring Boot",
+        themeColor: "orange"
     }
 ];
 
@@ -47,8 +54,10 @@ export function CardProjects() {
         <>
             <Row className={"g-4 justify-content-center"}>
                 {cardData.map((card) => (
-                    <Col key={card.title} xs={12} sm={6} md={6} lg={4} style={{maxHeight: '355px'}} className={"justify-content-start"}>
-                        <Card key={card.title} shadow="lg" padding="lg" style={{height: '100%'}} className={"m-2"} radius="md" withBorder>
+                    <Col key={card.title} xs={12} sm={6} md={6} lg={4} style={{maxHeight: '355px'}}
+                         className={"justify-content-start"}>
+                        <Card key={card.title} shadow="lg" padding="lg" style={{height: '100%'}} className={"m-2"}
+                              radius="md" withBorder>
                             <Card.Section>
                                 <Image src={card.imageRoute} height={160} style={{width: '100%'}} alt="project image"/>
                             </Card.Section>
@@ -92,7 +101,8 @@ export function CardProjects() {
                     size="xl"
                     title={openedCard.title}
                 >
-                    <Image src={openedCard.imageRoute} style={{width: '100%', height: '180px'}} radius={"md"} alt="project image"/>
+                    <Image src={openedCard.imageRoute} style={{width: '100%', height: '180px'}} radius={"md"}
+                           alt="project image"/>
                     <Container className={"py-2 border-bottom"}>
                         <Title>{openedCard.title}</Title>
                     </Container>
@@ -233,12 +243,26 @@ export function CardProjects() {
                         </Text>
                     </Container>
                 );
+            case "Java REST API":
+                return (
+                    <Container>
+                        <Text size="lg">
+                            To expand my skill set beyond PHP and Laravel, I started learning Java by building a RESTful API. My
+                            previous experience with APIs and familiarity with back-end development made this a natural progression.
+                            While I initially found Java challenging due to its differences from PHP, I soon discovered the power
+                            and flexibility of Spring Boot for building APIs.
+                        </Text>
+                        <Text size="lg" className="mt-4">
+                            This project, named "Calzyr," began as an idea for a calendar package with API compatibility and has
+                            since evolved into my primary Java learning project. It combines Java 23, Spring Boot, and MySQL, and
+                            serves as a foundation for exploring Java's capabilities in modern back-end development.
+                        </Text>
+                    </Container>
+                );
             default:
                 return (
                     <Container>
-                        <Card shadow="sm" padding="lg" radius="md" withBorder>
-                            <Title order={2} className="text-center mb-4">No available description.</Title>
-                        </Card>
+                        <Title order={2} className="text-center my-4">No available description.</Title>
                     </Container>
 
                 );
