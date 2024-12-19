@@ -22,11 +22,6 @@ export function Navbar() {
     const menuRef = useRef(null);
 
     useEffect(() => {
-        const currentIndex = data.findIndex((item) => item.href === location.pathname);
-        if (currentIndex !== -1) {
-            setActive(currentIndex);
-        }
-
         if (opened) {
             document.addEventListener('mousedown', handleClickOutside);
         } else {
@@ -35,7 +30,8 @@ export function Navbar() {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [location.pathname, data, opened]);
+    }, [opened]);
+
 
     const handleClick = (index, href) => {
         setActive(index);
@@ -43,7 +39,13 @@ export function Navbar() {
     };
 
     const handleClickOutside = (event) => {
-        if (menuRef.current && !menuRef.current.contains(event.target)) {
+        const burgerButton = document.querySelector('.mantine-Burger');
+        if (
+            menuRef.current &&
+            !menuRef.current.contains(event.target) &&
+            burgerButton &&
+            !burgerButton.contains(event.target)
+        ) {
             toggle();
         }
     };
@@ -57,7 +59,7 @@ export function Navbar() {
                             <nav className="p-1 nav-container border-bottom">
                                 <Row className={"prevent-overflow"}>
                                     <Col xs={3} className="position-relative relative-parent">
-                                        <Burger opened={opened} onClick={toggle} aria-label="Toggle navigation"/>
+                                        <Burger className={"mantine-burger"} opened={opened} onClick={toggle} aria-label="Toggle navigation"/>
 
                                         {opened && (
                                             <div
