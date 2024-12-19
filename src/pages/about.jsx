@@ -4,7 +4,7 @@ import {Col, Row} from "react-bootstrap";
 import {useMediaQuery} from "@mantine/hooks";
 
 export function AboutPage() {
-    const isMobile = useMediaQuery(`(max-width: 767px)`);
+    const isMobile = useMediaQuery(`(max-width: 576px)`);
     return (
         <>
             <Container className={"mb-5"}>
