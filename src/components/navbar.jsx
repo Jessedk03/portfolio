@@ -4,7 +4,7 @@ import {Row, Col} from "react-bootstrap";
 import {useDisclosure, useMediaQuery} from "@mantine/hooks";
 import {useEffect, useRef, useState} from "react";
 import {LanguageGlobe} from "../assets/svg/globe.jsx";
-import {useLocation, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const data = [
     {label: 'Home', href: '/'},
@@ -17,7 +17,6 @@ export function Navbar() {
     const isMobile = useMediaQuery('(max-width: 767px)');
     const [opened, {toggle}] = useDisclosure();
     const [active, setActive] = useState(0);
-    const location = useLocation();
     const navigate = useNavigate();
     const menuRef = useRef(null);
 
