@@ -36,7 +36,7 @@ export function AboutPage() {
 
     let randomFact = funFacts[Math.floor(Math.random() * funFacts.length)].fact;
 
-    const autoplay = useRef(Autoplay({delay: 3000}));
+    const autoplay = useRef(Autoplay({delay: 4000}));
 
     return (
         <>
@@ -198,9 +198,11 @@ export function AboutPage() {
                     </Col>
                     {/*Image Carrousel*/}
                     <Col xs={12} sm={6} md={6} lg={4} xl={4} className={isMobile ? "border-top mt-2" : "border-start"}>
-                        <Title className={"h4 pt-2 pb-1"}>
-                            This is me!
-                        </Title>
+                        <Container>
+                            <Title className={"h4 pt-2 pb-1"}>
+                                This is me!
+                            </Title>
+                        </Container>
                         <Container className={"d-flex align-items-center justify-content-center"}>
                             <Row>
                                 <Col xs={12} sm={12} md={12} lg={12}>
@@ -230,7 +232,7 @@ export function AboutPage() {
                                 </Col>
                                 <Col xs={12} sm={12} md={12} lg={12}
                                      className="text-center fst-italic text-muted">
-                                    <small>Black & White picture taken and edited by Matthias Molema</small>
+                                    <small>Black & White picture taken and edited by Mathias Molema</small>
                                 </Col>
                             </Row>
                         </Container>
