@@ -40,7 +40,7 @@ export function AboutPage() {
 
     return (
         <>
-            <Container className={"mb-5"}>
+            <Container className={`mb-5 ${isMobile ? false : "mt-3"}`}>
                 <Row>
                     <Col xs={12} sm={6} md={6} lg={8} xl={8}>
                         {/*About me*/}
@@ -91,7 +91,8 @@ export function AboutPage() {
                             </Row>
                         </Title>
                         <Text className={"py-1"}>
-                            I’m a bit of a "kat uit de boom kijken" type. I like to observe my surroundings and get a
+                            I’m a bit of a &#34;kat uit de boom kijken&#34; type. I like to observe my surroundings and
+                            get a
                             feel for things before I dive in. I may come off as reserved at first, but I’m more
                             comfortable once I get to know people.
                         </Text>
@@ -146,7 +147,8 @@ export function AboutPage() {
                             </Row>
                         </Title>
                         <Text className={"py-1"}>
-                            One of my favorite quotes is from Dylan Thomas: "Do not go gentle into that good night."
+                            One of my favorite quotes is from Dylan Thomas: &#34;Do not go gentle into that good
+                            night.&#34;
                             Which i got from the movie Interstellar, when inspecting the quote further it stayed with me
                             as a reminder to keep pushing forward, no matter the circumstances.
                         </Text>
@@ -159,7 +161,7 @@ export function AboutPage() {
                         <Title className={"h4 pt-2 pb-1"}>
                             <Row>
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                    Let's Connect
+                                    Let&#39;s Connect
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
                                            src={"src/assets/img/phone.webp"}/>
                                 </Col>
@@ -171,27 +173,38 @@ export function AboutPage() {
                         </Text>
                         <Text className={"py-1"}>
                             {/*Media*/}
-                            <Row className={"mb-1"}>
-                                <Col xs={6} sm={6} md={6} lg={6}>
-                                    <Button
-                                        variant={"filled"}
-                                        color={"#0072B1"}
-                                        className={"text-white"}
-                                        component={"a"}
-                                        href={"https://www.linkedin.com/in/jesse-de-koe?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"}
-                                        target={"_blank"} rightSection={<Linkedin color="white"/>}>
-                                        Let's Connect</Button>
-                                </Col>
-                                <Col className={"flex-row-reverse"} xs={6} sm={6} md={6} lg={6}>
-                                    <Button
-                                        variant={"filled"}
-                                        color={"#24292e"}
-                                        className={"text-white"}
-                                        component={"a"}
-                                        href={"https://github.com/Jessedk03"}
-                                        target={"_blank"} rightSection={<Github color="white"/>}>
-                                        Follow Me
-                                    </Button>
+                            <Row>
+                                <Col xs={12} sm={12} md={12} lg={12}>
+                                    <fieldset className="border rounded-2 p-2 px-3">
+                                        <legend className="float-none w-auto px-3 fs-5">
+                                            Connect with me
+                                        </legend>
+                                        <Row className="pb-2">
+                                            <Col className="justify-content-center d-flex" xs={6} sm={6} md={6} lg={6}>
+                                                <Button
+                                                    variant={"filled"}
+                                                    color={"#0072B1"}
+                                                    className={"text-white"}
+                                                    component={"a"}
+                                                    style={isMobile ? {fontSize: "12px"} : {}}
+                                                    href={"https://www.linkedin.com/in/jesse-de-koe?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"}
+                                                    target={"_blank"} rightSection={<Linkedin color="white"/>}>
+                                                    Let's Connect</Button>
+                                            </Col>
+                                            <Col className="justify-content-center d-flex" xs={6} sm={6} md={6} lg={6}>
+                                                <Button
+                                                    variant={"filled"}
+                                                    color={"#24292e"}
+                                                    className={"text-white"}
+                                                    component={"a"}
+                                                    style={isMobile ? {fontSize: "12px"} : {}}
+                                                    href={"https://github.com/Jessedk03"}
+                                                    target={"_blank"} rightSection={<Github color="white"/>}>
+                                                    Follow Me
+                                                </Button>
+                                            </Col>
+                                        </Row>
+                                    </fieldset>
                                 </Col>
                             </Row>
                         </Text>
