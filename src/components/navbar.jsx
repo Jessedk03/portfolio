@@ -9,7 +9,6 @@ import {useNavigate} from "react-router-dom";
 const data = [
     {label: 'Home', href: '/'},
     {label: 'About me', href: '/about'},
-    {label: 'Contact', href: '/contact'},
     {label: 'Cv', href: '/cv'},
 ];
 
