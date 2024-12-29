@@ -24,11 +24,11 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Deploying..
-        uses: appleboy/ssh-action@v1.2.0
+      - name: Setup FTP Deploy Action
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ssh.strato.com
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          key: ${{ secrets.KEY }}
-          port: 22
+          server: ftp.strato.com
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist/
+          server-dir: /cgi-bin/
