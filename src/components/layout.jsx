@@ -1,4 +1,4 @@
-import {Navbar} from './Navbar';
+import {Navbar} from './navbar.jsx';
 import {Col, Row} from 'react-bootstrap';
 import {useMediaQuery} from '@mantine/hooks';
 
