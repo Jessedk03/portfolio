@@ -25,7 +25,7 @@ jobs:
         run: npm run build
 
       - name: Deploy via SFTP
-        uses: appleboy/ssh-action@1.2.0
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ssh.strato.com
           username: ${{ secrets.SFTP_USERNAME }}
