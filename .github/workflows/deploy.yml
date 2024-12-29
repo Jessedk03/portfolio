@@ -24,7 +24,7 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: FTP Deploy
+      - name: FTP Deploy To Strato
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.strato.com
