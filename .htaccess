@@ -1,6 +1,15 @@
 RewriteEngine On
 RewriteBase /
+
+# Prevent direct access to index.html
 RewriteRule ^index\.html$ - [L]
+
+# If the requested resource is a valid file or directory, serve it.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
+
+# For everything else, rewrite to index.html to handle React Router routes
+RewriteRule ^.*$ /index.html [L]
+
+# Optional: Make sure the server knows the default index file
+DirectoryIndex index.html
