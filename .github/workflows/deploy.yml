@@ -24,7 +24,7 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Deploy via SFTP
+      - name: Deploy
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ssh.strato.com
