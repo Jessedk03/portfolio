@@ -30,4 +30,5 @@ jobs:
           host: ssh.strato.com
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
+          key: ${{ secrets.KEY }}
           port: 22
