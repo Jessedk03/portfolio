@@ -1,4 +1,4 @@
-import '../App.css'
+import '../App.css';
 import {Burger, Group, NavLink} from "@mantine/core";
 import {Col, Row} from "react-bootstrap";
 import {useDisclosure, useMediaQuery} from "@mantine/hooks";
