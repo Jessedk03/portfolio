@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "cp _headers dist/",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -50,6 +51,7 @@
     "postcss": "^8.4.49",
     "postcss-preset-mantine": "^1.17.0",
     "postcss-simple-vars": "^7.0.1",
-    "vite": "^6.0.1"
+    "vite": "^6.0.1",
+    "vite-plugin-static-copy": "^2.2.0"
   }
 }

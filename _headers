@@ -1,0 +1,13 @@
+# Force HTTPS
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer-when-downgrade
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# Set MIME types for JavaScript and WebP
+/assets/*
+  Content-Type: application/javascript
+
+/assets/*.webp
+  Content-Type: image/webp
