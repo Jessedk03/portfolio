@@ -9,6 +9,17 @@ import Autoplay from 'embla-carousel-autoplay';
 import '@mantine/carousel/styles.css';
 import {useRef} from "react";
 
+import laptopMan from '../assets/img/laptop-man.webp';
+import trainTrack from '../assets/img/train-track.webp';
+import star from '../assets/img/star.webp';
+import bullsEye from '../assets/img/bullseye.webp';
+import house from '../assets/img/house.webp';
+import sparkles from '../assets/img/sparkles.webp';
+import phone from '../assets/img/phone.webp';
+import thisIsMe1 from '../assets/img/this-is-me-1.webp';
+import thisIsMe2 from '../assets/img/this-is-me-2.webp';
+import thisIsMe3 from '../assets/img/this-is-me-3.webp';
+
 const funFacts = [
     {fact: "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible."},
     {fact: "Octopuses have three hearts, and two of them stop beating when they swim."},
@@ -49,7 +60,7 @@ export function AboutPage() {
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
                                     About Me
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
-                                           src={"src/assets/img/laptop-man.webp"}/>
+                                           src={laptopMan}/>
                                 </Col>
                             </Row>
                         </Title>
@@ -67,7 +78,7 @@ export function AboutPage() {
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
                                     My Journey
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
-                                           src={"src/assets/img/train-track.webp"}/>
+                                           src={trainTrack}/>
                                 </Col>
                             </Row>
                         </Title>
@@ -86,7 +97,7 @@ export function AboutPage() {
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
                                     A Glimpse Into My Personality
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
-                                           src={"src/assets/img/star.webp"}/>
+                                           src={star}/>
                                 </Col>
                             </Row>
                         </Title>
@@ -106,7 +117,7 @@ export function AboutPage() {
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
                                     Beyond Work
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
-                                           src={"src/assets/img/bullseye.webp"}/>
+                                           src={bullsEye}/>
                                 </Col>
                             </Row>
                         </Title>
@@ -123,7 +134,7 @@ export function AboutPage() {
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
                                     Values and Aspirations
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
-                                           src={"src/assets/img/house.webp"}/>
+                                           src={house}/>
                                 </Col>
                             </Row>
                         </Title>
@@ -142,7 +153,7 @@ export function AboutPage() {
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
                                     A Few More Things
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
-                                           src={"src/assets/img/sparkles.webp"}/>
+                                           src={sparkles}/>
                                 </Col>
                             </Row>
                         </Title>
@@ -163,7 +174,7 @@ export function AboutPage() {
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
                                     Let&#39;s Connect
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
-                                           src={"src/assets/img/phone.webp"}/>
+                                           src={phone}/>
                                 </Col>
                             </Row>
                         </Title>
@@ -189,7 +200,7 @@ export function AboutPage() {
                                                     style={isMobile ? {fontSize: "12px"} : {}}
                                                     href={"https://www.linkedin.com/in/jesse-de-koe?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"}
                                                     target={"_blank"} rightSection={<Linkedin color="white"/>}>
-                                                    Let's Connect</Button>
+                                                    Let&#39;s Connect</Button>
                                             </Col>
                                             <Col className="justify-content-center d-flex" xs={6} sm={6} md={6} lg={6}>
                                                 <Button
@@ -229,17 +240,17 @@ export function AboutPage() {
                                         <Carousel.Slide>
                                             <Image
                                                 className={"rounded-2"}
-                                                src={"src/assets/img/this-is-me-1.webp"}/>
+                                                src={thisIsMe1}/>
                                         </Carousel.Slide>
                                         <Carousel.Slide>
                                             <Image
                                                 className={"rounded-2"}
-                                                src={"src/assets/img/this-is-me-2.webp"}/>
+                                                src={thisIsMe2}/>
                                         </Carousel.Slide>
                                         <Carousel.Slide>
                                             <Image
                                                 className={"rounded-2"}
-                                                src={"src/assets/img/this-is-me-3.webp"}/>
+                                                src={thisIsMe3}/>
                                         </Carousel.Slide>
                                     </Carousel>
                                 </Col>

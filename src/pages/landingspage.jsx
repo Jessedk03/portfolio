@@ -3,6 +3,8 @@ import {Col, Row} from "react-bootstrap";
 import {useMediaQuery} from "@mantine/hooks";
 import {CardProjects} from "../components/card.jsx";
 
+import memoji from '../assets/img/memoji.webp';
+
 // eslint-disable-next-line react-refresh/only-export-components
 export function getAge(birthdayDate) {
     const birthday = new Date(birthdayDate);
@@ -35,7 +37,7 @@ export function LandingPage() {
 
                     <Col xs={12} md={4} className="d-flex justify-content-center align-items-center">
                         <Image
-                            src={"/assets/img/memoji.webp"}
+                            src={memoji}
                             alt={"memoji"}
                             style={{
                                 width: 200,

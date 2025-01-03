@@ -2,44 +2,51 @@ import {useState} from "react";
 import {Badge, Button, Card, Container, Group, Image, Modal, Text, Title} from "@mantine/core";
 import {Col, Row} from "react-bootstrap";
 
+import invoice from '../assets/img/invoice.webp';
+import hrm from '../assets/img/hrm.webp';
+import insights from '../assets/img/insights.webp';
+import customerPortal from '../assets/img/customer-portal.webp';
+import portfolioCard from '../assets/img/portfolio-card.webp';
+import javaLogoCard from '../assets/img/java-logo-card.webp';
+
 const cardData = [
     {
-        imageRoute: "/assets/img/invoice.webp",
+        imageRoute: invoice,
         function: "internship",
         title: "Invoice Module",
         slug: "Created an invoice management module during my internship.",
         themeColor: "teal"
     },
     {
-        imageRoute: "/assets/img/hrm.webp",
+        imageRoute: hrm,
         function: "internship",
         title: "HRM System",
         slug: "Tracked employee free hours and optimized HR processes.",
         themeColor: "indigo"
     },
     {
-        imageRoute: "/assets/img/insights.webp",
+        imageRoute: insights,
         function: "internship",
         title: "Insights Dashboard",
         slug: "Created an analytics module using C# and .NET.",
         themeColor: "cyan"
     },
     {
-        imageRoute: "/assets/img/customer-portal.webp",
+        imageRoute: customerPortal,
         function: "work",
         title: "Customer Portal",
         slug: "Developed a portal for customer self-service.",
         themeColor: "violet"
     },
     {
-        imageRoute: "/assets/img/portfolio-card.webp",
+        imageRoute: portfolioCard,
         function: "personal",
         title: "Portfolio Website",
         slug: "Developed a portfolio website in React!",
         themeColor: "red"
     },
     {
-        imageRoute: "/assets/img/java-logo-card.webp",
+        imageRoute: javaLogoCard,
         function: "personal",
         title: "Java REST API",
         slug: "Building a REST API with Spring Boot",
@@ -207,7 +214,7 @@ export function CardProjects() {
                             This was familiar territory for me, as we were taught Laravel in school, and both of my
                             previous internships
                             involved working with Laravel. It felt like reconnecting with an old friend — catching
-                            up on what's new,
+                            up on what&#39;s new,
                             but still familiar.
                         </Text>
                         <Text size="lg" className="mt-4">
@@ -253,9 +260,9 @@ export function CardProjects() {
                             and flexibility of Spring Boot for building APIs.
                         </Text>
                         <Text size="lg" className="mt-4">
-                            This project, named "Calzyr," began as an idea for a calendar package with API compatibility and has
+                            This project, named &#34;Calzyr,&#34; began as an idea for a calendar package with API compatibility and has
                             since evolved into my primary Java learning project. It combines Java 23, Spring Boot, and MySQL, and
-                            serves as a foundation for exploring Java's capabilities in modern back-end development.
+                            serves as a foundation for exploring Java&#39;s capabilities in modern back-end development.
                         </Text>
                     </Container>
                 );
