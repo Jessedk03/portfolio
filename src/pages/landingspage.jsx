@@ -35,7 +35,7 @@ export function LandingPage() {
 
                     <Col xs={12} md={4} className="d-flex justify-content-center align-items-center">
                         <Image
-                            src={"./src/assets/img/memoji.webp"}
+                            src={"/assets/img/memoji.webp"}
                             alt={"memoji"}
                             style={{
                                 width: 200,

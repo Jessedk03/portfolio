@@ -4,42 +4,42 @@ import {Col, Row} from "react-bootstrap";
 
 const cardData = [
     {
-        imageRoute: "src/assets/img/invoice.webp",
+        imageRoute: "/assets/img/invoice.webp",
         function: "internship",
         title: "Invoice Module",
         slug: "Created an invoice management module during my internship.",
         themeColor: "teal"
     },
     {
-        imageRoute: "src/assets/img/hrm.webp",
+        imageRoute: "/assets/img/hrm.webp",
         function: "internship",
         title: "HRM System",
         slug: "Tracked employee free hours and optimized HR processes.",
         themeColor: "indigo"
     },
     {
-        imageRoute: "src/assets/img/insights.webp",
+        imageRoute: "/assets/img/insights.webp",
         function: "internship",
         title: "Insights Dashboard",
         slug: "Created an analytics module using C# and .NET.",
         themeColor: "cyan"
     },
     {
-        imageRoute: "src/assets/img/customer-portal.webp",
+        imageRoute: "/assets/img/customer-portal.webp",
         function: "work",
         title: "Customer Portal",
         slug: "Developed a portal for customer self-service.",
         themeColor: "violet"
     },
     {
-        imageRoute: "src/assets/img/portfolio-card.webp",
+        imageRoute: "/assets/img/portfolio-card.webp",
         function: "personal",
         title: "Portfolio Website",
         slug: "Developed a portfolio website in React!",
         themeColor: "red"
     },
     {
-        imageRoute: "src/assets/img/java-logo-card.webp",
+        imageRoute: "/assets/img/java-logo-card.webp",
         function: "personal",
         title: "Java REST API",
         slug: "Building a REST API with Spring Boot",
