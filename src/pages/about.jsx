@@ -58,7 +58,7 @@ export function AboutPage() {
                         <Title className={"h4 pt-2 pb-1"}>
                             <Row>
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                    About Me
+                                    About me
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
                                            src={laptopMan}/>
                                 </Col>
@@ -76,7 +76,7 @@ export function AboutPage() {
                         <Title className={"h4 pt-2 pb-1"}>
                             <Row>
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                    My Journey
+                                    My journey
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
                                            src={trainTrack}/>
                                 </Col>
@@ -95,7 +95,7 @@ export function AboutPage() {
                         <Title className={"h4 pt-2 pb-1"}>
                             <Row>
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                    A Glimpse Into My Personality
+                                    A glimpse into my personality
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
                                            src={star}/>
                                 </Col>
@@ -115,7 +115,7 @@ export function AboutPage() {
                         <Title className={"h4 pt-2 pb-1"}>
                             <Row>
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                    Beyond Work
+                                    Beyond work
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
                                            src={bullsEye}/>
                                 </Col>
@@ -132,7 +132,7 @@ export function AboutPage() {
                         <Title className={"h4 pt-2 pb-1"}>
                             <Row>
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                    Values and Aspirations
+                                    Values and aspirations
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
                                            src={house}/>
                                 </Col>
@@ -151,7 +151,7 @@ export function AboutPage() {
                         <Title className={"h4 pt-2 pb-1"}>
                             <Row>
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                    A Few More Things
+                                    A few more things
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
                                            src={sparkles}/>
                                 </Col>
@@ -172,7 +172,7 @@ export function AboutPage() {
                         <Title className={"h4 pt-2 pb-1"}>
                             <Row>
                                 <Col className={"d-flex align-items-center"} xs={12} sm={12} md={12} lg={12} xl={12}>
-                                    Let&#39;s Connect
+                                    Let&#39;s connect
                                     <Image className={"ms-1"} style={{width: 20, height: 20}}
                                            src={phone}/>
                                 </Col>
