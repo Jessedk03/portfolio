@@ -3,7 +3,7 @@ import {Burger, Group, NavLink} from "@mantine/core";
 import {Col, Row} from "react-bootstrap";
 import {useDisclosure, useMediaQuery} from "@mantine/hooks";
 import {useEffect, useRef, useState} from "react";
-import {LanguageGlobe} from "../assets/svg/globe.jsx";
+// import {LanguageGlobe} from "../assets/svg/globe.jsx";
 import {useNavigate} from "react-router-dom";
 
 const data = [
@@ -108,7 +108,7 @@ export function Navbar() {
                                             />
                                         </Col>
                                         <Col xs={3} className="d-flex justify-content-end align-items-center">
-                                            <LanguageGlobe color="#707070"/>
+                                            {/*<LanguageGlobe color="#707070"/>*/}
                                         </Col>
                                     </Row>
                                 </nav>
@@ -124,7 +124,7 @@ export function Navbar() {
                                         </Col>
                                         <Col xs={6} md={6} lg={6}
                                              className="d-flex align-items-center flex-row-reverse">
-                                            <LanguageGlobe color="#707070"/>
+                                            {/*<LanguageGlobe color="#707070"/>*/}
                                         </Col>
                                     </Row>
                                 </Group>
