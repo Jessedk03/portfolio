@@ -9,7 +9,7 @@ export function App() {
         <>
             <Layout>
                 <Routes>
-                    <Route path="/" element={<LandingPage/>}/>
+                    <Route exact path="/" element={<LandingPage/>}/>
                     <Route path="/about" element={<AboutPage/>}/>
                     <Route path="/cv" element={<CVPage/>}/>
                 </Routes>
