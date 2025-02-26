@@ -30,7 +30,7 @@ export function LandingPage() {
                          className={`text-center text-md-start mb-3 mb-md-0 ${isMobile ? 'px-3' : 'ps-5'}`}>
                         <p className={"m-0"}>Hi! Welcome to my website my name is </p>
                         <h1>Jesse de Koe</h1>
-                        <p>I am {getAge('2003-05-14')} years old, living in Overijssel, Netherlands.
+                        <p>I am {getAge('2003-05-14')} years old, living in Utrecht, Netherlands.
                             If you want to know more about me navigate through the website!
                         </p>
                     </Col>
