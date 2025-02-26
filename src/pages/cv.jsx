@@ -63,7 +63,6 @@ export function CVPage() {
                             invoice lines and print their invoices.
                         </Text>
                         <Title order={3} mt={"lg"}>Miscellaneous</Title>
-                        <Text>Ready to move to Utrecht</Text>
                         <Text>Drivers License</Text>
                     </Col>
                     <Col xs={12} sm={12} md={5} lg={5} xl={5}>
