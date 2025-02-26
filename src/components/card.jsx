@@ -245,8 +245,7 @@ export function CardProjects() {
                             make it more personal.
                         </Text>
                         <Text size="lg" className="mt-4">
-                            This project is built using React, Mantine, Bootstrap, and HTML/CSS, and is hosted by
-                            Strato.
+                            This project is built using React, Mantine, Bootstrap, and HTML/CSS, deployed on Netlify
                         </Text>
                     </Container>
                 );
