@@ -123,8 +123,7 @@ export function AboutPage() {
                         </Title>
                         <Text className={"py-1"}>
                             Outside of work, I spend a lot of time throwing weights around at the gym, keeping up with
-                            software development, or hanging out with my girlfriend, who lives in Utrecht. I’ll soon be
-                            moving to her, and I’m looking forward to the change in scenery (and work opportunities).
+                            software development, or hanging out with my girlfriend.
                             In my downtime, I enjoy TV shows with a fiction twist—stuff like Dexter or The Walking
                             Dead—where the impossible feels just plausible enough.
                         </Text>
