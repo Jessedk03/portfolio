@@ -1,4 +1,4 @@
-import {Button, Container, Image, Text, Title} from '@mantine/core';
+import {Anchor, Button, Container, Image, Text, Title} from '@mantine/core';
 import {getAge} from "./landingspage.jsx";
 import {Col, Row} from "react-bootstrap";
 import {useMediaQuery} from "@mantine/hooks";
@@ -68,9 +68,10 @@ export function AboutPage() {
                             Hi, I’m Jesse de Koe – or just Jesse ({getAge('2003-05-14')}). I was born in Meppel and
                             raised in
                             Staphorst, Netherlands.
-                            Currently, I work as a software developer at LogicTrade/Bloemert SSC, where I focus on
+                            I worked as a software developer at LogicTrade/Bloemert SSC, where I focused on
                             back-end
-                            development using PHP and Laravel.
+                            development using PHP and Laravel. Currently looking for a job! click <Anchor
+                            href={"/cv"}>here</Anchor> for my resume.
                         </Text>
                         {/*My Journey*/}
                         <Title className={"h4 pt-2 pb-1"}>
@@ -124,8 +125,8 @@ export function AboutPage() {
                         <Text className={"py-1"}>
                             Outside of work, I spend a lot of time throwing weights around at the gym, keeping up with
                             software development, or hanging out with my girlfriend.
-                            In my downtime, I enjoy TV shows with a fiction twist—stuff like Dexter or The Walking
-                            Dead—where the impossible feels just plausible enough.
+                            In my downtime, I enjoy TV shows with a fiction twist-stuff like Dexter or The Walking
+                            Dead-where the impossible feels just plausible enough.
                         </Text>
                         {/*Values and Aspirations*/}
                         <Title className={"h4 pt-2 pb-1"}>
