@@ -68,11 +68,11 @@ export function CVPage() {
                     <Col xs={12} sm={12} md={5} lg={5} xl={5}>
                         <Title order={3} mt="lg">Work Experience</Title>
                         <Text fz={"md"} mt={"xs"}>
-                            Software Developer at Bloemert SSC
-                            <small><br/>(12-2024 - Present)</small>
+                            Software Developer at Bloemert SSC <small><br/>(Bloemert Group)</small>
+                            <small><br/>(12-2024 - 03-2025)</small>
                         </Text>
                         <Text fz={"md"} mt={"xs"}>
-                            Software Developer at LogicTrade
+                            Software Developer at LogicTrade <small><br/>(Bloemert Group)</small>
                             <small><br/>(07-2024 - 12-2024)</small>
                         </Text>
                         <Text fz={"md"} mt={"xs"}>
