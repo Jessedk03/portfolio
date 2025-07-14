@@ -98,8 +98,8 @@ export function CVPage() {
                         <Title order={3} mt="lg">Skills</Title>
                         <Text fz={"md"} mt={"xs"}>Programming Languages: PHP, C#, Java, Javascript, MySql</Text>
                         <Text fz={"md"} mt={"xs"}>Frameworks: Laravel, ASP.NET, Spring Boot, React, Vue.js</Text>
-                        <Text fz={"md"} mt={"xs"}>Tools: Git, SQL Server, Power BI</Text>
-                        <Text fz={"md"} mt={"xs"}>Soft Skills: Problem-solving, Communication, Teamwork</Text>
+                        <Text fz={"md"} mt={"xs"}>Tools: Git, SQL Server, Power BI, Linux (Mint)</Text>
+                        <Text fz={"md"} mt={"xs"}>Soft Skills: Problem-solving, Communication, Teamwork, Multidisciplinary Teamwork</Text>
                     </Col>
                     <div className={"border-top mt-3"}>
                         <Title order={3} mt="xs">Contact Information</Title>
