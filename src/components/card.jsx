@@ -8,6 +8,9 @@ import insights from '../assets/img/insights.webp';
 import customerPortal from '../assets/img/customer-portal.webp';
 import portfolioCard from '../assets/img/portfolio-card.webp';
 import javaLogoCard from '../assets/img/java-logo-card.webp';
+import forgeLogCard from '../assets/img/forge.webp';
+import auroraLogoCard from '../assets/img/aurora.webp';
+import backofficeLogoCard from '../assets/img/back-office.webp';
 
 const cardData = [
     {
@@ -51,6 +54,27 @@ const cardData = [
         title: "Java REST API",
         slug: "Building a REST API with Spring Boot",
         themeColor: "orange"
+    },
+    {
+        imageRoute: backofficeLogoCard,
+        function: "personal",
+        title: "CRM Back Office",
+        slug: "Developing a CRM Back Office",
+        themeColor: "lime"
+    },
+    {
+        imageRoute: forgeLogCard,
+        function: "personal",
+        title: "Forge Back-end System",
+        slug: "Developing a CRM Back-end System",
+        themeColor: "orange"
+    },
+    {
+        imageRoute: auroraLogoCard,
+        function: "personal",
+        title: "Aurora Front-end System",
+        slug: "Developing a CRM Front-end System",
+        themeColor: "blue"
     }
 ];
 
@@ -260,10 +284,66 @@ export function CardProjects() {
                         </Text>
                         <Text size="lg" className="mt-4">
                             This project, named &#34;Calzyr,&#34; began as an idea for a calendar package with API compatibility and has
-                            since evolved into my primary Java learning project. It combines Java 23, Spring Boot, and MySQL, and
+                            since evolved into my primary Java learning project. I wanted a project that i could keep
+                            building on and basically was never finished. With my previous experience in making/ maintaining
+                            CRM system i thought &#34;Why not make my own&#34;. And so it began to turn into a CRM system.
+                            It combines Java 23, Spring Boot, and MySQL, and
                             serves as a foundation for exploring Java&#39;s capabilities in modern back-end development.
                         </Text>
                     </Container>
+                );
+            case "CRM Back Office":
+                return (
+                    <Container>
+                        <Text size="lg">
+                            For my CRM system, I wanted to have access to the data through a central dashboard. This is
+                            what I would consider the back office of my CRM — a place where I can manage customer data,
+                            subscriptions, and provide customer support.
+                        </Text>
+                        <Text size="lg" className="mt-4">
+                            This project is still in development and will be built using C# and ASP.NET. I deliberately
+                            chose ASP.NET to diversify my skill set and enable future Microsoft service integrations.
+                        </Text>
+                    </Container>
+                );
+            case "Forge Back-end System":
+                return (
+                    <Container>
+                        <Text size="lg">
+                            This card goes a little more in-depth than the 'Java REST API' card by focusing on the architectural and qualitative approach behind this project.
+                        </Text>
+                        <Text size="lg" className="mt-4">
+                            Forge CRM (formerly named Calzyr) is an ongoing personal project intended as a sandbox to practice writing maintainable, secure, and scalable Java code.
+                            It is not built for commercial use, but rather to grow alongside my development skills.
+                        </Text>
+                        <Text size="lg" className="mt-4">
+                            The backend follows a modular monolith architecture built with Java, Spring Boot, JPA, and Flyway for database migrations. It’s structured using a layered approach:
+                            the Controller layer handles HTTP requests, which delegate to the Service layer containing the business logic, and finally to Repositories that interface with the database.
+                        </Text>
+                        <Text size="lg" className="mt-4">
+                            I apply Clean Code, SOLID, and DRY principles throughout the codebase. Each commit is reviewed by myself through a personal pull-request-style workflow, ensuring deliberate decisions and consistency.
+                            The goal is to practice writing production-quality code, even if this project never goes live.
+                        </Text>
+                        <Text size="lg" className="mt-4">
+                            Forge CRM is where I learn to make meaningful technical decisions - from data security and access control to reducing system load and complexity.
+                            One of the key challenges I’m tackling is breaking out of the perfectionist loop - learning when “good enough” is truly good enough, and iterating later when needed.
+                        </Text>
+                    </Container>
+                );
+            case "Aurora Front-end System":
+                return (
+                    <Container>
+                        <Text size="lg">
+                            Aurora is the frontend interface for the Forge CRM, built with React, TypeScript, and the
+                            Mantine component library.
+                        </Text>
+                        <Text size="lg" className="mt-4">
+                            With this project I focus on UI/UX design and learning how to effectively connect and
+                            consume APIs. It's meant to be fast, responsive, and intuitive - serving as the Front-end
+                            of my CRM.
+                        </Text>
+                    </Container>
+
                 );
             default:
                 return (
