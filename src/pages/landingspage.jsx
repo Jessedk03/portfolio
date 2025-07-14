@@ -31,7 +31,7 @@ export function LandingPage() {
                         <p className={"m-0"}>Hi! Welcome to my website my name is </p>
                         <h1>Jesse de Koe</h1>
                         <p>I am {getAge('2003-05-14')} years old, living in Utrecht, Netherlands.
-                            If you want to know more about me navigate through the website!
+                            If you want to know more about me, then navigate through the website!
                         </p>
                     </Col>
 
