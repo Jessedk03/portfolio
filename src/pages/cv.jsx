@@ -10,13 +10,13 @@ export function CVPage() {
             <Container className={`mb-5 ${isMobile ? false : "pt-3"}`}>
                 <Row>
                     <Col xs={12} sm={12} md={7} lg={7} xl={7} className={`${isMobile ? false : "border-end"}`}>
-                        <Title order={2}>My CV</Title>
-                        <Text>
+                        {/* <Title order={2}>My CV</Title> */}
+                        {/* <Text>
                             Click <Anchor href="https://pitch.com/v/jesse-de-koe-cv-42tffa"
                                           target={"_blank"}>here </Anchor>
                             to see my CV in a less &#39;boring&#39; way. This does bring you to another page.
                             {isMobile ? <><br/><Code>Tip: try to have your device in landscape mode</Code></> : false}
-                        </Text>
+                        </Text> */}
                         <Title order={3} mt="lg" className={`${isMobile ? "border-bottom" : false}`}>Projects</Title>
 
                         <Title order={5} mt={"sm"}>Customer Portal (Bloemert SSC)</Title>
@@ -68,6 +68,10 @@ export function CVPage() {
                     <Col xs={12} sm={12} md={5} lg={5} xl={5}>
                         <Title order={3} mt="lg">Work Experience</Title>
                         <Text fz={"md"} mt={"xs"}>
+                            Software Developer at NBIP
+                            <small><br/>(09-2023 - present)</small>
+                        </Text>
+                        <Text fz={"md"} mt={"xs"}>
                             Software Developer at Bloemert SSC <small><br/>(Bloemert Group)</small>
                             <small><br/>(12-2024 - 03-2025)</small>
                         </Text>
@@ -89,7 +93,7 @@ export function CVPage() {
                         <Title order={3} mt="lg">Education</Title>
                         <Text fz={"md"} mt={"xs"}>
                             Bachelor of Science in Software Development, Hogeschool Utrecht
-                            <small><br/>(Starting: 09-2025)</small>
+                            <small><br/>(09-2025 - present)</small>
                         </Text>
                         <Text fz={"md"} mt={"xs"}>
                             Software Development, Landstede MBO (Level 4)
@@ -98,17 +102,11 @@ export function CVPage() {
                         <Title order={3} mt="lg">Skills</Title>
                         <Text fz={"md"} mt={"xs"}>Programming Languages: PHP, C#, Java, Javascript, MySql</Text>
                         <Text fz={"md"} mt={"xs"}>Frameworks: Laravel, ASP.NET, Spring Boot, React, Vue.js</Text>
-                        <Text fz={"md"} mt={"xs"}>Tools: Git, SQL Server, Power BI, Linux (Mint)</Text>
+                        <Text fz={"md"} mt={"xs"}>Tools: Git, SQL Server, Linux</Text>
                         <Text fz={"md"} mt={"xs"}>Soft Skills: Problem-solving, Communication, Teamwork, Multidisciplinary Teamwork</Text>
                     </Col>
                     <div className={"border-top mt-3"}>
                         <Title order={3} mt="xs">Contact Information</Title>
-                        <Text fz={"md"} mt={"xs"}>
-                            Email:&thinsp;
-                            <Anchor href="mailto:jessedekoe03@gmail.com">
-                                Jessedekoe03@gmail.com
-                            </Anchor>
-                        </Text>
                         <Text fz={"md"} mt={"xs"}>
                             LinkedIn:&thinsp;
                             <Anchor href="https://linkedin.com/in/jesse-de-koe" target="_blank">
