@@ -68,10 +68,10 @@ export function AboutPage() {
                             Hi, I’m Jesse de Koe – or just Jesse ({getAge('2003-05-14')}). I was born in Meppel and
                             raised in
                             Staphorst, Netherlands.
-                            I worked as a software developer at LogicTrade/Bloemert SSC, where I focused on
+                            I work as a software developer at NBIP, where I focus on
                             back-end
-                            development using PHP and Laravel. Currently looking for a job! click <Anchor
-                            href={"/cv"}>here</Anchor> for my resume.
+                            development using PHP and Laravel. <s>Currently looking for a job!</s> click <Anchor
+                            href={"/cv"}>here</Anchor> for my resume. 
                         </Text>
                         {/*My Journey*/}
                         <Title className={"h4 pt-2 pb-1"}>
