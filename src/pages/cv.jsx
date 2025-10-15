@@ -69,7 +69,7 @@ export function CVPage() {
                         <Title order={3} mt="lg">Work Experience</Title>
                         <Text fz={"md"} mt={"xs"}>
                             Software Developer at NBIP
-                            <small><br/>(09-2023 - present)</small>
+                            <small><br/>(09-2025 - present)</small>
                         </Text>
                         <Text fz={"md"} mt={"xs"}>
                             Software Developer at Bloemert SSC <small><br/>(Bloemert Group)</small>
