@@ -1,3 +1,7 @@
+# Block search engines and AI crawlers from all content
+/*
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
+
 # Set MIME types for JavaScript and WebP
 /assets/*.webp
   Content-Type: image/webp
