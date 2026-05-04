@@ -4,7 +4,6 @@ import {Col, Row} from "react-bootstrap";
 import {useMediaQuery} from "@mantine/hooks";
 import {Linkedin} from "../assets/svg/linkedin.jsx";
 import {Github} from "../assets/svg/github.jsx";
-import {Carousel} from "@mantine/carousel";
 import Autoplay from 'embla-carousel-autoplay';
 import '@mantine/carousel/styles.css';
 import {useRef} from "react";
@@ -16,9 +15,6 @@ import bullsEye from '../assets/img/bullseye.webp';
 import house from '../assets/img/house.webp';
 import sparkles from '../assets/img/sparkles.webp';
 import phone from '../assets/img/phone.webp';
-import thisIsMe1 from '../assets/img/this-is-me-1.webp';
-import thisIsMe2 from '../assets/img/this-is-me-2.webp';
-import thisIsMe3 from '../assets/img/this-is-me-3.webp';
 
 const funFacts = [
     {fact: "Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible."},
@@ -47,8 +43,6 @@ export function AboutPage() {
 
     let randomFact = funFacts[Math.floor(Math.random() * funFacts.length)].fact;
 
-    const autoplay = useRef(Autoplay({delay: 4000}));
-
     return (
         <>
             <Container className={`mb-5 ${isMobile ? false : "mt-3"}`}>
@@ -65,12 +59,10 @@ export function AboutPage() {
                             </Row>
                         </Title>
                         <Text className={"py-1"}>
-                            Hi, I’m Jesse de Koe – or just Jesse ({getAge('2003-05-14')}). I was born in Meppel and
-                            raised in
-                            Staphorst, Netherlands.
-                            I work as a software developer at NBIP, where I focus on
+                            Hi, I’m Jesse ({getAge('2003-05-14')}).
+                            I work as a Software Developer at NBIP, where I focus on
                             back-end
-                            development using PHP and Laravel. <s>Currently looking for a job!</s> click <Anchor
+                            development using PHP. click <Anchor
                             href={"/cv"}>here</Anchor> for my resume. 
                         </Text>
                         {/*My Journey*/}
@@ -90,7 +82,7 @@ export function AboutPage() {
                             customer portal
                             from scratch, a challenging yet rewarding experience. My next challenge will be at
                             Hogeschool Utrecht, where I will study Software Development in a dual program, attending
-                            school two days a week and spending the other three days working at a software company.
+                            school two days a week and spending the other three days working at NBIP.
                         </Text>
                         {/*A Glimpse Into My Personality*/}
                         <Title className={"h4 pt-2 pb-1"}>
@@ -143,9 +135,9 @@ export function AboutPage() {
                             perspectives, no matter their position.
                         </Text>
                         <Text className={"py-1"}>
-                            My short-term goal is to land a job in Utrecht for my Software Development degree at
-                            Hogeschool Utrecht. Long-term, I’d like to have a family and a house. Though, given the
-                            current housing market, that might take a bit longer than expected.
+                            Right now, my focus is on my role at NBIP and earning my Bachelor&#39;s degree. Looking further
+                            ahead, I want to become an Embedded Software Engineer in the aerospace industry, a field
+                            that brings together my fascination with physics, astronomy, and rocketry.
                         </Text>
                         {/*A Few More Things*/}
                         <Title className={"h4 pt-2 pb-1"}>
@@ -219,47 +211,6 @@ export function AboutPage() {
                                 </Col>
                             </Row>
                         </Text>
-                    </Col>
-                    {/*Image Carrousel*/}
-                    <Col xs={12} sm={6} md={6} lg={4} xl={4} className={isMobile ? "border-top mt-2" : "border-start"}>
-                        <Container>
-                            <Title className={"h4 pt-2 pb-1"}>
-                                This is me!
-                            </Title>
-                        </Container>
-                        <Container className={"d-flex align-items-center justify-content-center"}>
-                            <Row>
-                                <Col xs={12} sm={12} md={12} lg={12}>
-                                    <Carousel
-                                        height={"100%"}
-                                        slideGap={"sm"}
-                                        loop={true}
-                                        plugins={[autoplay.current]}
-                                        onMouseEnter={autoplay.current.stop}
-                                        onMouseLeave={autoplay.current.reset}>
-                                        <Carousel.Slide>
-                                            <Image
-                                                className={"rounded-2"}
-                                                src={thisIsMe1}/>
-                                        </Carousel.Slide>
-                                        <Carousel.Slide>
-                                            <Image
-                                                className={"rounded-2"}
-                                                src={thisIsMe2}/>
-                                        </Carousel.Slide>
-                                        <Carousel.Slide>
-                                            <Image
-                                                className={"rounded-2"}
-                                                src={thisIsMe3}/>
-                                        </Carousel.Slide>
-                                    </Carousel>
-                                </Col>
-                                <Col xs={12} sm={12} md={12} lg={12}
-                                     className="text-center fst-italic text-muted">
-                                    <small>Black & White picture taken and edited by Mathias Molema</small>
-                                </Col>
-                            </Row>
-                        </Container>
                     </Col>
                 </Row>
             </Container>

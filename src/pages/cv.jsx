@@ -113,12 +113,6 @@ export function CVPage() {
                                 linkedin.com/in/jesse-de-koe
                             </Anchor>
                         </Text>
-                        <Text fz={"md"} mt={"xs"}>
-                            GitHub:&thinsp;
-                            <Anchor href="https://github.com/Jessedk03" target="_blank">
-                                github.com/Jessedk03
-                            </Anchor>
-                        </Text>
                     </div>
                 </Row>
             </Container>
