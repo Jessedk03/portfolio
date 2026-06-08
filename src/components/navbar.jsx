@@ -4,7 +4,7 @@ import { Col, Row } from "react-bootstrap";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import { useEffect, useRef, useState } from "react";
 // import {LanguageGlobe} from "../assets/svg/globe.jsx";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const data = [
   { label: "Home", href: "/" },
@@ -17,7 +17,6 @@ export function Navbar() {
   const [opened, { toggle }] = useDisclosure();
   const [active, setActive] = useState(0);
   const navigate = useNavigate();
-  const location = useLocation();
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -47,14 +46,6 @@ export function Navbar() {
       toggle();
     }
   };
-
-  // Hide entire menu on the Personal Leadership honours page
-  if (
-    location.pathname &&
-    location.pathname.startsWith("/honours/personal_leadership")
-  ) {
-    return null;
-  }
 
   return (
     <>
