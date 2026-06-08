@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Persoonlijk Leiderschap — Jesse de Koe</title>
+<style>
+/* =====================================================================
+   Persoonlijk Leiderschap — "De route over de print"
+   Een verticale, zigzaggende timeline in de stijl van een printplaat (PCB).
+   Alle klassen zijn geprefixt met .plj- zodat ze niet botsen met je portfolio.
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+.plj-root {
+  /* ---- Palet: matte printplaat, koper, goud, signaal-cyaan ---- */
+  --plj-board:        #0c181b;
+  --plj-board-2:      #11242a;
+  --plj-board-3:      #16313a;
+  --plj-copper:       #d59a5b;
+  --plj-copper-bright:#f0b878;
+  --plj-gold:         #e8c07d;
+  --plj-signal:       #57d4c4;
+  --plj-signal-glow:  rgba(87, 212, 196, 0.45);
+  --plj-silk:         #eef3f4;
+  --plj-silk-dim:     #93a9ad;
+  --plj-edge:         rgba(213, 154, 91, 0.28);
+  --plj-edge-soft:    rgba(213, 154, 91, 0.14);
+
+  --plj-display: 'Space Grotesk', system-ui, -apple-system, Segoe UI, sans-serif;
+  --plj-body:    'IBM Plex Sans', system-ui, -apple-system, Segoe UI, sans-serif;
+  --plj-mono:    'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --plj-maxw: 980px;
+
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1rem, 4vw, 2.5rem) clamp(2rem, 5vw, 4rem);
+  color: var(--plj-silk);
+  font-family: var(--plj-body);
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.6;
+  background-color: var(--plj-board);
+  /* Substraat: vage boorgaten (dot-grid) + zachte 45° trace-textuur + vignet */
+  background-image:
+    radial-gradient(circle at center, rgba(255,255,255,0.045) 1px, transparent 1.4px),
+    repeating-linear-gradient(45deg, var(--plj-edge-soft) 0 1px, transparent 1px 26px),
+    radial-gradient(120% 80% at 50% 0%, rgba(87,212,196,0.06), transparent 60%);
+  background-size: 26px 26px, auto, auto;
+  background-position: 0 0, 0 0, 0 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.plj-root *,
+.plj-root *::before,
+.plj-root *::after { box-sizing: border-box; }
+
+/* ============================== HERO ============================== */
+
+.plj-hero {
+  max-width: var(--plj-maxw);
+  margin: 0 auto clamp(3rem, 7vw, 5.5rem);
+  text-align: center;
+}
+
+.plj-status {
+  display: inline-flex;
+  gap: 1.1rem;
+  align-items: center;
+  font-family: var(--plj-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--plj-silk-dim);
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--plj-edge);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.02);
+}
+.plj-status b { color: var(--plj-signal); font-weight: 600; }
+.plj-status .plj-led {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--plj-signal);
+  box-shadow: 0 0 8px var(--plj-signal-glow);
+  display: inline-block; margin-right: 0.45rem;
+  vertical-align: middle;
+}
+
+.plj-eyebrow {
+  margin: 1.4rem 0 0.7rem;
+  font-family: var(--plj-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--plj-copper);
+}
+
+.plj-title {
+  margin: 0;
+  font-family: var(--plj-display);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 6.5vw, 4rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--plj-silk);
+  text-wrap: balance;
+}
+.plj-title .plj-spark { color: var(--plj-signal); }
+
+.plj-subtitle {
+  margin: 1rem auto 0;
+  max-width: 38ch;
+  font-family: var(--plj-display);
+  font-weight: 500;
+  font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+  color: var(--plj-copper-bright);
+}
+
+.plj-byline {
+  margin-top: 1.1rem;
+  font-family: var(--plj-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--plj-silk-dim);
+}
+
+.plj-intro {
+  margin: 1.6rem auto 0;
+  max-width: 56ch;
+  color: var(--plj-silk);
+}
+
+.plj-hero-rule {
+  width: min(320px, 70%);
+  height: 1px;
+  margin: 2rem auto 0;
+  border: 0;
+  background: linear-gradient(90deg, transparent, var(--plj-copper), transparent);
+}
+
+/* ============================ TIMELINE ============================ */
+
+.plj-timeline {
+  position: relative;
+  max-width: var(--plj-maxw);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+/* De zigzaggende koper-trace (de "bus") loopt door het midden. */
+.plj-timeline::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  left: 50%;
+  width: 44px;
+  transform: translateX(-22px);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='44'%20height='120'%20viewBox='0%200%2044%20120'%3E%3Cpath%20d='M22%200L8%2024L36%2048L8%2072L36%2096L22%20120'%20fill='none'%20stroke='%23d59a5b'%20stroke-width='2'%20stroke-linejoin='round'%20stroke-linecap='round'/%3E%3Cpath%20d='M22%200L8%2024L36%2048L8%2072L36%2096L22%20120'%20fill='none'%20stroke='%23f0b878'%20stroke-width='0.6'%20stroke-linejoin='round'%20opacity='0.55'/%3E%3C/svg%3E");
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 44px 120px;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.plj-node {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 88px 1fr;
+  align-items: center;
+  margin: clamp(1.6rem, 4vw, 2.6rem) 0;
+  /* reveal-startstaat */
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.plj-node.is-lit { opacity: 1; transform: none; }
+
+/* Soldeerpunt (via) op de centrale trace */
+.plj-pad {
+  grid-column: 2;
+  justify-self: center;
+  position: relative;
+  z-index: 2;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 32%, #fff6e6 0%, var(--plj-gold) 38%, #b07d3f 100%);
+  border: 2px solid var(--plj-board);
+  box-shadow:
+    0 0 0 3px rgba(232, 192, 125, 0.18),
+    0 0 0 1px var(--plj-copper);
+  transition: box-shadow 0.6s ease;
+}
+.plj-node.is-lit .plj-pad {
+  box-shadow:
+    0 0 0 3px var(--plj-signal-glow),
+    0 0 14px 2px var(--plj-signal-glow),
+    0 0 0 1px var(--plj-signal);
+}
+
+/* Kaart = component op de print */
+.plj-card {
+  grid-column: 1;
+  position: relative;
+  padding: clamp(1.1rem, 2.6vw, 1.5rem) clamp(1.2rem, 3vw, 1.7rem);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.035), transparent 40%),
+    var(--plj-board-2);
+  border: 1px solid var(--plj-edge);
+  border-radius: 14px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    0 16px 30px -22px rgba(0,0,0,0.9);
+  transition: border-color 0.5s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.plj-node:nth-child(even) .plj-card { grid-column: 3; }
+
+/* Aftakkende trace van de via naar de kaart */
+.plj-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--plj-copper-bright), var(--plj-copper));
+  transform: translateY(-50%);
+}
+.plj-node:not(:nth-child(even)) .plj-card::before { right: -30px; }
+.plj-node:nth-child(even) .plj-card::before { left: -30px; }
+
+.plj-node.is-lit .plj-card {
+  border-color: rgba(87, 212, 196, 0.4);
+}
+.plj-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(87, 212, 196, 0.55);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 22px 36px -22px rgba(0,0,0,0.95);
+}
+
+/* Component-header: refdes + icoon */
+.plj-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.85rem;
+}
+.plj-refdes {
+  font-family: var(--plj-mono);
+  font-weight: 600;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: var(--plj-gold);
+  padding: 0.22rem 0.5rem;
+  border: 1px solid var(--plj-edge);
+  border-radius: 6px;
+  background: rgba(0,0,0,0.25);
+  white-space: nowrap;
+}
+.plj-icon {
+  flex: none;
+  width: 30px; height: 30px;
+  display: grid; place-items: center;
+  color: var(--plj-signal);
+  border: 1px solid rgba(87,212,196,0.3);
+  border-radius: 8px;
+  background: rgba(87,212,196,0.06);
+}
+.plj-icon svg { width: 18px; height: 18px; }
+.plj-tag {
+  margin-left: auto;
+  font-family: var(--plj-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--plj-silk-dim);
+}
+
+.plj-card-title {
+  margin: 0 0 0.55rem;
+  font-family: var(--plj-display);
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2.8vw, 1.5rem);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--plj-silk);
+}
+.plj-card-body {
+  margin: 0;
+  color: var(--plj-silk);
+}
+.plj-card-note {
+  margin: 0.7rem 0 0;
+  font-family: var(--plj-mono);
+  font-size: 0.78rem;
+  color: var(--plj-copper-bright);
+}
+
+/* Habit-"pinnen" */
+.plj-pins {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.95rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.plj-pin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--plj-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--plj-silk);
+  padding: 0.25rem 0.55rem 0.25rem 0.45rem;
+  border: 1px solid var(--plj-edge);
+  border-radius: 999px;
+  background: rgba(0,0,0,0.2);
+}
+.plj-pin::before {
+  content: '';
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--plj-copper-bright);
+  box-shadow: 0 0 6px rgba(240,184,120,0.6);
+}
+.plj-pin b { color: var(--plj-gold); font-weight: 600; }
+
+/* ============================= OUTRO ============================= */
+
+.plj-outro {
+  position: relative;
+  max-width: 760px;
+  margin: clamp(2.5rem, 6vw, 4rem) auto 0;
+  padding: clamp(1.8rem, 4vw, 2.8rem);
+  text-align: center;
+  border: 1px solid var(--plj-edge);
+  border-radius: 18px;
+  background:
+    radial-gradient(120% 140% at 50% 0%, rgba(87,212,196,0.1), transparent 60%),
+    var(--plj-board-2);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+/* Eind-via onder de trace, landt op de outro */
+.plj-outro::before {
+  content: '';
+  position: absolute;
+  top: -39px; left: 50%;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 35% 32%, #fff6e6, var(--plj-gold) 40%, #b07d3f);
+  box-shadow: 0 0 0 4px var(--plj-signal-glow), 0 0 16px 2px var(--plj-signal-glow);
+}
+
+.plj-boot {
+  display: inline-block;
+  font-family: var(--plj-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--plj-signal);
+  margin-bottom: 1rem;
+}
+.plj-boot .plj-ok { color: var(--plj-gold); }
+
+.plj-outro-title {
+  margin: 0 0 1rem;
+  font-family: var(--plj-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 5vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--plj-silk);
+}
+.plj-outro-title .plj-spark { color: var(--plj-signal); }
+
+.plj-thanks {
+  margin: 0 auto;
+  max-width: 54ch;
+  color: var(--plj-silk);
+}
+.plj-sign {
+  margin-top: 1.4rem;
+  font-family: var(--plj-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--plj-copper-bright);
+}
+
+/* ============================ RESPONSIVE ========================= */
+
+@media (max-width: 720px) {
+  .plj-timeline::before {
+    left: 22px;
+    transform: none;
+    width: 30px;
+    background-size: 30px 96px;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='30'%20height='96'%20viewBox='0%200%2030%2096'%3E%3Cpath%20d='M15%200L6%2024L24%2048L6%2072L15%2096'%20fill='none'%20stroke='%23d59a5b'%20stroke-width='2'%20stroke-linejoin='round'%20stroke-linecap='round'/%3E%3C/svg%3E");
+  }
+  .plj-node {
+    grid-template-columns: 44px 1fr;
+    align-items: start;
+    column-gap: 0.6rem;
+    margin: 1.3rem 0;
+  }
+  .plj-pad { grid-column: 1; justify-self: center; margin-top: 6px; }
+  .plj-card,
+  .plj-node:nth-child(even) .plj-card { grid-column: 2; }
+  .plj-card::before,
+  .plj-node:nth-child(even) .plj-card::before {
+    left: -16px; right: auto;
+    width: 16px;
+    top: 22px;
+  }
+  .plj-tag { display: none; }
+}
+
+/* ====================== TOEGANKELIJKHEID ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .plj-node,
+  .plj-pad,
+  .plj-card {
+    transition: none !important;
+  }
+  .plj-node {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* preview-only: vul de pagina */
+html, body { margin: 0; background: #0c181b; }
+</style>
+</head>
+<body>
+<section class="plj-root">
+  <header class="plj-hero">
+    <span class="plj-status">
+      <span><span class="plj-led"></span>Persoonlijk Leiderschap · Meeting 10</span>
+      <span><b>Final presentation</b></span>
+    </span>
+    <h1 class="plj-title">Bijdragen <span class="plj-spark">zonder</span> te domineren</h1>
+    <p class="plj-subtitle">Mijn route door Covey’s zeven eigenschappen.</p>
+    <p class="plj-byline">Jesse de Koe · 1897635 · HBO-ICT Software Development, Hogeschool Utrecht</p>
+    <p class="plj-intro">Ik begon met één doel: meer regie nemen over mijn eigen leven. Wat volgde is geen rechte lijn, maar een route met bochten — soldeerpunt voor soldeerpunt. Scroll mee over de print.</p>
+    <hr class="plj-hero-rule">
+  </header>
+
+  <ol class="plj-timeline">
+      <li class="plj-node">
+        <span class="plj-pad" aria-hidden="true"></span>
+        <article class="plj-card">
+          <div class="plj-card-head">
+            <span class="plj-icon"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M12 3v9'/><path d='M7.5 6.5a7 7 0 1 0 9 0'/></svg></span>
+            <span class="plj-refdes">PWR</span>
+            <span class="plj-tag">Vertrekpunt</span>
+          </div>
+          <h2 class="plj-card-title">Regie nemen</h2>
+          <p class="plj-card-body">Toen ik hoorde dat er extra lessen waren, koos ik bewust voor Persoonlijk Leiderschap. Niet omdat het moest, maar omdat ik regie wilde nemen over waar ik heen ga: embedded software engineer in de lucht- en ruimtevaart.</p>
+          
+          
+        </article>
+      </li>
+      <li class="plj-node">
+        <span class="plj-pad" aria-hidden="true"></span>
+        <article class="plj-card">
+          <div class="plj-card-head">
+            <span class="plj-icon"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='7' y='7' width='10' height='10' rx='1.5'/><path d='M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3'/></svg></span>
+            <span class="plj-refdes">U1</span>
+            <span class="plj-tag">Critical incident · werk</span>
+          </div>
+          <h2 class="plj-card-title">De eerste indruk</h2>
+          <p class="plj-card-body">Ik wilde een nieuwe collega warm verwelkomen, maar sloeg dicht en noemde alleen mijn naam. Pas later — in een gesprek over ruimtevaart en embedded software — brak het ijs. Toen luisterde ik eindelijk om te begrijpen, niet om te antwoorden.</p>
+          
+          <ul class='plj-pins'><li class='plj-pin'><b>1</b> Proactief</li><li class='plj-pin'><b>2</b> Eind voor ogen</li><li class='plj-pin'><b>4</b> Win-win</li><li class='plj-pin'><b>5</b> Eerst begrijpen</li><li class='plj-pin'><b>6</b> Synergie</li></ul>
+        </article>
+      </li>
+      <li class="plj-node">
+        <span class="plj-pad" aria-hidden="true"></span>
+        <article class="plj-card">
+          <div class="plj-card-head">
+            <span class="plj-icon"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M4 20l4-4'/><path d='M7 13l4 4'/><path d='M11 17l8-8a2 2 0 0 0-3-3l-8 8'/><path d='M16 6l2 2'/></svg></span>
+            <span class="plj-refdes">U2</span>
+            <span class="plj-tag">Critical incident · privé</span>
+          </div>
+          <h2 class="plj-card-title">De stille muis</h2>
+          <p class="plj-card-body">Mijn muis klikte te luid. In plaats van klagen of een nieuwe kopen, soldeerde ik er zelf stille switches in. Het heteluchtpistool durfde ik amper aan na een eerdere misser — maar wat al uit elkaar lag, kon niet nóg kapotter. Het lukte.</p>
+          
+          <ul class='plj-pins'><li class='plj-pin'><b>1</b> Proactief</li><li class='plj-pin'><b>3</b> Belangrijkste eerst</li><li class='plj-pin'><b>7</b> Zaag scherp</li></ul>
+        </article>
+      </li>
+      <li class="plj-node">
+        <span class="plj-pad" aria-hidden="true"></span>
+        <article class="plj-card">
+          <div class="plj-card-head">
+            <span class="plj-icon"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M5 8h11v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z'/><path d='M16 9h2a2 2 0 0 1 0 4h-2'/><path d='M8 3c0 1-1 1-1 2M11 3c0 1-1 1-1 2'/></svg></span>
+            <span class="plj-refdes">H1</span>
+            <span class="plj-tag">Held</span>
+          </div>
+          <h2 class="plj-card-title">Menno</h2>
+          <p class="plj-card-body">Een collega bij NBIP, vlak voor zijn pensioen. Bij de koffieautomaat zei hij dat hij zichzelf in mij zag. Hij maakte iets wakker: ik ben niet “dom”, ik moet alleen leren hoe het systeem werkt. Die paradigm shift duwt me richting een WO-master.</p>
+          <p class='plj-card-note'>↳ empathisch luisteren</p>
+          
+        </article>
+      </li>
+      <li class="plj-node">
+        <span class="plj-pad" aria-hidden="true"></span>
+        <article class="plj-card">
+          <div class="plj-card-head">
+            <span class="plj-icon"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='3' y='4' width='18' height='16' rx='2'/><path d='M7 9l3 3-3 3M13 15h4'/></svg></span>
+            <span class="plj-refdes">H2</span>
+            <span class="plj-tag">Held</span>
+          </div>
+          <h2 class="plj-card-title">Linus Torvalds</h2>
+          <p class="plj-card-body">Hij bouwde Linux én Git — en gaf ze gratis weg. Software hoort van iedereen te zijn. Dat heeft me mijn eigen code opener laten maken en grote techbedrijven die op mijn data draaien uit mijn leven geweerd. Kennis om bij te dragen, niet te bezitten.</p>
+          <p class='plj-card-note'>↳ technische visie tussen gelijken</p>
+          
+        </article>
+      </li>
+      <li class="plj-node">
+        <span class="plj-pad" aria-hidden="true"></span>
+        <article class="plj-card">
+          <div class="plj-card-head">
+            <span class="plj-icon"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><path d='M6 9a6 6 0 1 1 12 0c0 2.5-2 3.5-3 4.5s-1.5 2-1.5 3.5a2.5 2.5 0 0 1-5 0'/><path d='M9.5 9a2.5 2.5 0 0 1 4 2'/></svg></span>
+            <span class="plj-refdes">IDL</span>
+            <span class="plj-tag">Ideale leider</span>
+          </div>
+          <h2 class="plj-card-title">Naast je, niet boven je</h2>
+          <p class="plj-card-body">Mijn ideale leider luistert empathisch zoals Menno en deelt domeinkennis als gelijke, zoals Linus. Iemand die bijdraagt in plaats van domineert. Ik hoef zelf geen leider boven anderen te zijn — maar mijn luisterkwaliteit vertaalt zich daar wél naartoe.</p>
+          
+          
+        </article>
+      </li>
+      <li class="plj-node">
+        <span class="plj-pad" aria-hidden="true"></span>
+        <article class="plj-card">
+          <div class="plj-card-head">
+            <span class="plj-icon"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='4'/><circle cx='12' cy='12' r='0.6' fill='currentColor'/></svg></span>
+            <span class="plj-refdes">EIG·1</span>
+            <span class="plj-tag">Grootste verschuiving</span>
+          </div>
+          <h2 class="plj-card-title">Wees proactief</h2>
+          <p class="plj-card-body">Ik dacht dat proactief “je beste beentje voorzetten” betekende. Het gaat juist over regie: bewust kiezen wie ik wil zijn en daarnaar handelen. Leergierig, betrouwbaar, en de tijd nemen om mensen écht te horen — dát is voor mij proactief leven.</p>
+          
+          <ul class='plj-pins'><li class='plj-pin'><b>1</b> Proactief</li></ul>
+        </article>
+      </li>
+      <li class="plj-node">
+        <span class="plj-pad" aria-hidden="true"></span>
+        <article class="plj-card">
+          <div class="plj-card-head">
+            <span class="plj-icon"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='4'/><circle cx='12' cy='12' r='0.6' fill='currentColor'/></svg></span>
+            <span class="plj-refdes">EIG·4</span>
+            <span class="plj-tag">Grootste verschuiving</span>
+          </div>
+          <h2 class="plj-card-title">Denk win-win</h2>
+          <p class="plj-card-body">Win-win betekende voor mij: allebei inleveren. Een gesprek met Nienke draaide dat om — een innerlijke win is óók winst. Als iemand iets meer krijgt en het mij oprecht niet uitmaakt, verlies ik niet. Ik win van binnen.</p>
+          
+          <ul class='plj-pins'><li class='plj-pin'><b>4</b> Win-win</li></ul>
+        </article>
+      </li>
+      <li class="plj-node">
+        <span class="plj-pad" aria-hidden="true"></span>
+        <article class="plj-card">
+          <div class="plj-card-head">
+            <span class="plj-icon"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><circle cx='12' cy='12' r='8'/><circle cx='12' cy='12' r='4'/><circle cx='12' cy='12' r='0.6' fill='currentColor'/></svg></span>
+            <span class="plj-refdes">EIG·5</span>
+            <span class="plj-tag">Grootste verschuiving</span>
+          </div>
+          <h2 class="plj-card-title">Eerst begrijpen, dan begrepen worden</h2>
+          <p class="plj-card-body">Vroeger was mijn visie DÉ visie. Inmiddels ben ik vooral nieuwsgierig naar waaróm iemand denkt wat die denkt. Covey gaf me taal voor iets dat ik al voelde: luisteren is meer dan wachten tot je mag praten.</p>
+          
+          <ul class='plj-pins'><li class='plj-pin'><b>5</b> Eerst begrijpen</li></ul>
+        </article>
+      </li>
+      <li class="plj-node">
+        <span class="plj-pad" aria-hidden="true"></span>
+        <article class="plj-card">
+          <div class="plj-card-head">
+            <span class="plj-icon"><svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'><rect x='6' y='6' width='12' height='12' rx='2'/><rect x='10' y='10' width='4' height='4' rx='1'/><path d='M9 6V3M15 6V3M9 21v-3M15 21v-3M6 9H3M6 15H3M21 9h-3M21 15h-3'/></svg></span>
+            <span class="plj-refdes">MCU</span>
+            <span class="plj-tag">De kern</span>
+          </div>
+          <h2 class="plj-card-title">De rode draad</h2>
+          <p class="plj-card-body">Alles komt samen in één zin: bijdragen zonder te domineren. Mijn mission statement (gemaakt met de FranklinCovey-builder, met hulp van mijn zus) maakte dat scherp. Regie nemen is geen vinkje — het is een keuze die ik elke dag opnieuw mag maken.</p>
+          
+          
+        </article>
+      </li>
+  </ol>
+
+  <footer class="plj-outro">
+    <span class="plj-boot"><span class="plj-ok">[ OK ]</span> board powered · ready to ship</span>
+    <h2 class="plj-outro-title">…en het <span class="plj-spark">begin</span> van</h2>
+    <p class="plj-thanks">Dank aan mijn medestudenten — voor jullie verhalen, jullie eerlijkheid en de gesprekken die mij scherper maakten. En dank aan mijn docent, voor het gereedschap én de ruimte om écht naar mezelf te kijken.</p>
+    <p class="plj-sign">— Jesse</p>
+  </footer>
+</section>
+
+<script>
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll('.plj-node'));
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-lit'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-lit'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
