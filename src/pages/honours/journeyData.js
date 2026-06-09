@@ -1,133 +1,133 @@
 // =====================================================================
-//  Inhoud van de timeline. Pas hier gerust teksten aan — de opmaak in
-//  PersonalLeadershipJourney.jsx / .css verandert hier niet door.
+//  Timeline content. Feel free to edit the text here — the styling in
+//  PersonalLeadershipJourney.jsx / .css is not affected by this.
 // =====================================================================
 
-// Korte labels voor Covey's eigenschappen (gebruikt in de "pinnen").
+// Short labels for Covey's habits (used in the "pins").
 export const habitNames = {
-  1: 'Proactief',
-  2: 'Eind voor ogen',
-  3: 'Belangrijkste eerst',
+  1: 'Proactive',
+  2: 'End in mind',
+  3: 'First things first',
   4: 'Win-win',
-  5: 'Eerst begrijpen',
-  6: 'Synergie',
-  7: 'Zaag scherp',
+  5: 'Understand first',
+  6: 'Synergize',
+  7: 'Sharpen the saw',
 };
 
 export const hero = {
-  status: 'Persoonlijk Leiderschap · Meeting 10',
+  status: 'Personal Leadership · Meeting 10',
   eyebrow: 'Final presentation',
-  // De titel is de rode draad uit mijn masterplan.
-  titlePre: 'Bijdragen ',
-  titleSpark: 'zonder',
-  titlePost: ' te domineren',
-  subtitle: 'Mijn route door Covey’s zeven eigenschappen.',
+  // The title is the common thread from my master plan.
+  titlePre: 'Contribute ',
+  titleSpark: 'without',
+  titlePost: ' dominating',
+  subtitle: 'My route through Covey’s seven habits.',
   byline: 'Jesse de Koe · 1897635 · HBO-ICT Software Development, Hogeschool Utrecht',
   intro:
-    'Ik begon met één doel: meer regie nemen over mijn eigen leven. Wat volgde is geen rechte lijn, maar een route met bochten — soldeerpunt voor soldeerpunt. Scroll mee over de print.',
+      'I started with one goal: to take more control over my own life. What followed isn’t a straight line, but a route full of bends — solder joint by solder joint. Scroll along the board.',
 };
 
 export const nodes = [
   {
     refdes: 'PWR',
-    tag: 'Vertrekpunt',
+    tag: 'Starting point',
     icon: 'power',
-    title: 'Regie nemen',
+    title: 'Taking control',
     body:
-      'Toen ik hoorde dat er extra lessen waren, koos ik bewust voor Persoonlijk Leiderschap. Niet omdat het moest, maar omdat ik regie wilde nemen over waar ik heen ga: embedded software engineer in de lucht- en ruimtevaart.',
+        'When I heard there were extra classes on offer, I deliberately chose Personal Leadership. Not because I had to, but because I wanted to take control of where I’m heading: embedded software engineer in the aerospace sector.',
     habits: [],
   },
   {
     refdes: 'U1',
-    tag: 'Critical incident · werk',
+    tag: 'Critical incident · work',
     icon: 'chip',
-    title: 'De eerste indruk',
+    title: 'The first impression',
     body:
-      'Ik wilde een nieuwe collega warm verwelkomen, maar sloeg dicht en noemde alleen mijn naam. Pas later — in een gesprek over ruimtevaart en embedded software — brak het ijs. Toen luisterde ik eindelijk om te begrijpen, niet om te antwoorden.',
+        'I wanted to give a new colleague a warm welcome, but I froze and only said my name. It was only later — in a conversation about space travel and embedded software — that the ice broke. That’s when I finally listened to understand, not to reply.',
     habits: [1, 2, 4, 5, 6],
   },
   {
     refdes: 'U2',
-    tag: 'Critical incident · privé',
+    tag: 'Critical incident · personal',
     icon: 'iron',
-    title: 'De stille muis',
+    title: 'The silent mouse',
     body:
-      'Mijn muis klikte te luid. In plaats van klagen of een nieuwe kopen, soldeerde ik er zelf stille switches in. Het heteluchtpistool durfde ik amper aan na een eerdere misser — maar wat al uit elkaar lag, kon niet nóg kapotter. Het lukte.',
+        'My mouse clicked too loudly. Instead of complaining or buying a new one, I soldered in silent switches myself. I hardly dared touch the heat gun after an earlier mishap — but what was already taken apart couldn’t break any further. It worked.',
     habits: [1, 3, 7],
   },
   {
     refdes: 'H1',
-    tag: 'Held',
+    tag: 'Hero',
     icon: 'mug',
     title: 'Menno',
     body:
-      'Een collega bij NBIP, vlak voor zijn pensioen. Bij de koffieautomaat zei hij dat hij zichzelf in mij zag. Hij maakte iets wakker: ik ben niet “dom”, ik moet alleen leren hoe het systeem werkt. Die paradigm shift duwt me richting een WO-master.',
-    note: '↳ empathisch luisteren',
+        'A colleague at NBIP, just before he retired. At the coffee machine he told me he saw himself in me. He woke something up in me: I’m not “dumb”, I just need to learn how the system works. That paradigm shift is pushing me toward a university (WO) master’s.',
+    note: '↳ empathetic listening',
     habits: [],
   },
   {
     refdes: 'H2',
-    tag: 'Held',
+    tag: 'Hero',
     icon: 'terminal',
     title: 'Linus Torvalds',
     body:
-      'Hij bouwde Linux én Git — en gaf ze gratis weg. Software hoort van iedereen te zijn. Dat heeft me mijn eigen code opener laten maken en grote techbedrijven die op mijn data draaien uit mijn leven geweerd. Kennis om bij te dragen, niet te bezitten.',
-    note: '↳ technische visie tussen gelijken',
+        'He built Linux and Git — and gave them away for free. Software should belong to everyone. That made me open up my own code and keep the big tech companies that run on my data out of my life. Knowledge to contribute, not to own.',
+    note: '↳ technical vision among equals',
     habits: [],
   },
   {
     refdes: 'IDL',
-    tag: 'Ideale leider',
+    tag: 'Ideal leader',
     icon: 'ear',
-    title: 'Naast je, niet boven je',
+    title: 'Beside you, not above you',
     body:
-      'Mijn ideale leider luistert empathisch zoals Menno en deelt domeinkennis als gelijke, zoals Linus. Iemand die bijdraagt in plaats van domineert. Ik hoef zelf geen leider boven anderen te zijn — maar mijn luisterkwaliteit vertaalt zich daar wél naartoe.',
+        'My ideal leader listens empathetically like Menno and shares domain knowledge as an equal, like Linus. Someone who contributes rather than dominates. I don’t need to be a leader above others myself — but my listening skills do translate to that.',
     habits: [],
   },
   {
-    refdes: 'EIG·1',
-    tag: 'Grootste verschuiving',
+    refdes: 'HAB·1',
+    tag: 'Biggest shift',
     icon: 'target',
-    title: 'Wees proactief',
+    title: 'Be proactive',
     body:
-      'Ik dacht dat proactief “je beste beentje voorzetten” betekende. Het gaat juist over regie: bewust kiezen wie ik wil zijn en daarnaar handelen. Leergierig, betrouwbaar, en de tijd nemen om mensen écht te horen — dát is voor mij proactief leven.',
+        'I thought being proactive meant “putting your best foot forward.” It’s actually about control: consciously choosing who I want to be and acting on it. Eager to learn, reliable, and taking the time to truly hear people — that, to me, is living proactively.',
     habits: [1],
   },
   {
-    refdes: 'EIG·4',
-    tag: 'Grootste verschuiving',
+    refdes: 'HAB·4',
+    tag: 'Biggest shift',
     icon: 'target',
-    title: 'Denk win-win',
+    title: 'Think win-win',
     body:
-      'Win-win betekende voor mij: allebei inleveren. Een gesprek met Nienke draaide dat om — een innerlijke win is óók winst. Als iemand iets meer krijgt en het mij oprecht niet uitmaakt, verlies ik niet. Ik win van binnen.',
+        'To me, win-win meant: both sides give something up. A conversation with Nienke flipped that around — an inner win is a win too. If someone gets a little more and I honestly don’t mind, I don’t lose. I win on the inside.',
     habits: [4],
   },
   {
-    refdes: 'EIG·5',
-    tag: 'Grootste verschuiving',
+    refdes: 'HAB·5',
+    tag: 'Biggest shift',
     icon: 'target',
-    title: 'Eerst begrijpen, dan begrepen worden',
+    title: 'Seek first to understand, then to be understood',
     body:
-      'Vroeger was mijn visie DÉ visie. Inmiddels ben ik vooral nieuwsgierig naar waaróm iemand denkt wat die denkt. Covey gaf me taal voor iets dat ik al voelde: luisteren is meer dan wachten tot je mag praten.',
+        'I used to think my view was THE view. These days I’m mostly curious about why someone thinks what they think. Covey gave me language for something I already felt: listening is more than waiting for your turn to speak.',
     habits: [5],
   },
   {
     refdes: 'MCU',
-    tag: 'De kern',
+    tag: 'The core',
     icon: 'core',
-    title: 'De rode draad',
+    title: 'The common thread',
     body:
-      'Alles komt samen in één zin: bijdragen zonder te domineren. Mijn mission statement (gemaakt met de FranklinCovey-builder, met hulp van mijn zus) maakte dat scherp. Regie nemen is geen vinkje — het is een keuze die ik elke dag opnieuw mag maken.',
+        'It all comes together in one sentence: contribute without dominating. My mission statement (made with the FranklinCovey builder, with help from my sister) brought that into focus. Taking control isn’t a box to tick — it’s a choice I get to make again every day.',
     habits: [],
   },
 ];
 
 export const outro = {
   boot: '[ OK ] board powered · ready to ship',
-  titlePre: '…en het ',
-  titleSpark: 'begin',
-  titlePost: ' van',
+  titlePre: '…and the ',
+  titleSpark: 'beginning',
+  titlePost: ' of',
   thanks:
-    'Dank aan mijn medestudenten — voor jullie verhalen, jullie eerlijkheid en de gesprekken die mij scherper maakten. En dank aan mijn docent, voor het gereedschap én de ruimte om écht naar mezelf te kijken.',
+      'Thanks to my fellow students — for your stories, your honesty, and the conversations that sharpened me. And thanks to my teacher, for the tools and the space to truly look at myself.',
   sign: '— Jesse',
 };
